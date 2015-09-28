@@ -3,7 +3,14 @@ import BunnyGroup from '../BunnyGroup/BunnyGroup.js';
 import Bunny from '../Bunny/Bunny.js';
 import Background from '../Background/Background.js';
 import RendererStore from '../../stores/RendererStore.js';
-
+/**
+ * Main App Display Object
+ *
+ * Adds a background and some bunnies to it's self
+ *
+ * @exports App
+ * @extends ScaledContainer
+ */
 export default class App extends ScaledContainer {
 
   constructor(...args) {
