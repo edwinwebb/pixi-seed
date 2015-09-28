@@ -74,7 +74,8 @@ You can configure some app settings in package.json
 
 ## Static assets
 
-`import` asset files from within your JavaScript component files:
+`import` asset files from within your JavaScript component files. To add more
+filetypes, look at the webpack.config.js and add a file loader.
 
 ```javascript
 // Filename: app.js
