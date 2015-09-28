@@ -12,8 +12,8 @@ import {%=o.extends%} from './{{%=o.extends%}}/{{%=o.extends%}}.js';
 
 export default class {%=o.exports%} extends {%=o.extends%} {
 
-  constructor(..args) {
-    super(..args);
+  constructor(...args) {
+    super(...args);
   }
 
 }
