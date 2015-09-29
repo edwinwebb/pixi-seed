@@ -2,7 +2,7 @@
   "name": "pixi-seed",
   "version": "0.2.0",
   "repository": "https://github.com/edwinwebb/pixi-seed",
-  "description": "Pixi.js project seed / boiler-plate with ES6 and webpack",
+  "description": "Pixi.js project seed / boiler-plate with ES6 and Webpack",
   "config": {
     "buildDir": "./build",
     "stageWidth": 1920,
