@@ -15,5 +15,9 @@ export default class {%=o.exports%} extends {%=o.extends%} {
   constructor(...args) {
     super(...args);
   }
+  {% for(var i = 0; i < o.functions.length; i++) { %}
+  {%= o.functions[i] %}() {
 
+  }
+  {% } %}
 }

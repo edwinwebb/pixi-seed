@@ -1,3 +1,8 @@
+function commaSplit(i) {
+  i = i.replace(" ", "");
+  return i.split(",");
+}
+
 module.exports = {
   "templatesFolder" : "./templates/",
   "outputFolder" : "./app/",
@@ -30,6 +35,13 @@ module.exports = {
         "default": "A display object",
         "required": true,
         "type": "input"
+      }, {
+        "name": "functions",
+        "message": "Comma seperated list of functions",
+        "default": "",
+        "required": false,
+        "type": "input",
+        "filter" : commaSplit
       }]
     },
     "action" : {
