@@ -12,10 +12,16 @@ Here's the PIXI.js bunny expressed as an interactive sprite in ES6.
 
 ```JavaScript
 import { Tween } from 'tween.js';
-import PIXI from 'pixi.js';
-import BUNNY from'./bunny.png';
+import { Sprite, Texture } from 'pixi.js';
+import BUNNY from './bunny.png';
 
-export default class Bunny extends PIXI.Sprite {
+/**
+ * A bunny which spins on it's feet when moused over
+ *
+ * @exports Bunny
+ * @extends Sprite
+ */
+export default class Bunny extends Sprite {
 
   constructor() {
     const texture = Texture.fromImage(BUNNY);
