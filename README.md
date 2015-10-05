@@ -1,11 +1,10 @@
 # Pixi Seed
 
-This project is designed to bootstrap your PIXI.js development with modern tooling, technology and project organisation. Use as boilerplate for your next Pixi.js project
+This project is designed to bootstrap your Pixi.js development with modern tooling, technology and project organisation. Use as boilerplate for your next project.
 
-Webpack with ES6 provides a more modular approach to PIXI.js development and allows you to include assets within your JS. [Reactman](https://www.npmjs.com/package/reactman) allows you to quickly add assets to your project and the example Store helps organise your data.
+Webpack with ES6 provides a more class based approach to Pixi.js development and allows you to include assets within your JS. [Reactman](https://www.npmjs.com/package/reactman) enables you to quickly add code to your project and the using Stores helps organise your data.
 
-The seed is designed to work across multiple devices with a ‘best-fit’ rendering methodology.
-
+The project comes with Render and Animation stores and a ScaledContainer to help work across multiple devices with a ‘best-fit’ rendering methodology.
 
 ## Example Display Object
 Here's the PIXI.js bunny expressed as an interactive sprite in ES6.
