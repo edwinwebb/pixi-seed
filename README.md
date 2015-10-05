@@ -2,7 +2,7 @@
 
 This project is designed to bootstrap your PIXI.js development with modern tooling, technology and project organisation. Use as boilerplate for your next Pixi.js project
 
-Webpack with ES6 provides a more modular approach to PIXI.js development and allows you to include assets within your JS. Reactman allows you to quickly add assets to your project and the example Store helps organise your data.
+Webpack with ES6 provides a more modular approach to PIXI.js development and allows you to include assets within your JS. [Reactman](https://www.npmjs.com/package/reactman) allows you to quickly add assets to your project and the example Store helps organise your data.
 
 The seed is designed to work across multiple devices with a ‘best-fit’ rendering methodology.
 
@@ -77,6 +77,7 @@ You can configure some app settings in package.json
 * `npm start` - Build and start the app in development mode at http://localhost:8080
 * `npm run build` - Run a production build, outputs to ./build/
 * `npm run lint` - Lint your code
+* `npm run reactman` - Generate code for a DisplayObject or Store
 
 ## Static assets
 
