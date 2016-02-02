@@ -26,8 +26,9 @@ module.exports = {
           { test: /\.html$/, exclude: /node_modules/, loader: "file-loader?name=[path][name].[ext]"},
           { test: /\.jpe?g$|\.svg$|\.png$/, exclude: /node_modules/, loader: "file-loader?name=[path][name].[ext]"},
           { test: /\.json$/, exclude: /node_modules/, loader: "json"},
+          { test: /\.json$/, include: path.join(__dirname, 'node_modules', 'pixi.js'),loader: 'json'}
         ],
-	postLoaders: [{
+	      postLoaders: [{
           include: path.resolve(__dirname, 'node_modules/pixi.js'),
           loader: 'transform?brfs'
         }]
