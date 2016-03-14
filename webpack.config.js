@@ -22,7 +22,7 @@ module.exports = {
     },
     module: {
         loaders: [
-          { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
+          { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader", query:{presets:['es2015']}},
           { test: /\.html$/, exclude: /node_modules/, loader: "file-loader?name=[path][name].[ext]"},
           { test: /\.jpe?g$|\.svg$|\.png$/, exclude: /node_modules/, loader: "file-loader?name=[path][name].[ext]"},
           { test: /\.json$/, exclude: /node_modules/, loader: "json"},
