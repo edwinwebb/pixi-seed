@@ -18,7 +18,7 @@ export default class Renderer extends PIXI.WebGLRenderer {
 
     super(...args);
 
-    this.resolution = window.devicePixelRatio;
+    //this.resolution = window.devicePixelRatio;
 
     window.addEventListener('resize', this.resizeHandler.bind(this));
 
