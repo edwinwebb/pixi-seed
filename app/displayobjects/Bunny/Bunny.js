@@ -24,16 +24,13 @@ export default class Bunny extends Sprite {
     this.pivot.y = .5;
 
     this.interactive = true;
+    this.on('mouseover', this.startSpin.bind(this));
   }
 
   startSpin() {
     this.tween.to({rotation: Math.PI*2}, 1000);
     this.tween.start();
     this.tween.onComplete(() => this.rotation = 0);
-  }
-
-  mouseover() {
-    this.startSpin();
   }
 
 }
