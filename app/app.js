@@ -6,6 +6,10 @@
  *
  */
 
+ import AnimationStore from './stores/AnimationStore';
+
+ console.log(AnimationStore);
+
 // import './index.html';
 // import Renderer from './Renderer/Renderer';
 // import App from './displayobjects/App/App';
