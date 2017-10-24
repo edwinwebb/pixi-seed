@@ -1,5 +1,3 @@
-import { createStore } from 'redux';
-
 const defaultState = {
   tick: 0,
   startTime: window.performance.now(),

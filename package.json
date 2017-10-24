@@ -4,12 +4,11 @@
   "repository": "https://github.com/edwinwebb/pixi-seed",
   "description": "Pixi.js project seed / boiler-plate with ES6, Webpack and Redux",
   "scripts": {
-    "prestart": "npm install",
-    "start": "NODE_ENV=development webpack-dev-server --content-base ./build/ --hot --inline --host 0.0.0.0",
+    "start": "NODE_ENV=development webpack-dev-server",
     "webpack": "webpack -p --config ./webpack.config.js",
     "build": "NODE_ENV=production npm run webpack",
     "prewebpack": "npm run clean",
-    "clean": "rimraf $npm_package_config_buildDir && mkdir $npm_package_config_buildDir",
+    "clean": "rimraf ./build && mkdir ./build",
     "lint": "eslint ./app/**/*.js",
     "reactman": "reactman --config ./templates/reactman.config.js"
   },
@@ -29,7 +28,8 @@
     "json-loader": "^0.5.3",
     "reactman": "^3.2.0",
     "rimraf": "^2.6.2",
-    "webpack": "^3.8.1"
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
   },
   "engines": {
     "node": ">=8.0.0"

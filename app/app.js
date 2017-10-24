@@ -6,9 +6,15 @@
  *
  */
 
- import AnimationStore from './stores/AnimationStore';
+ import Store from './stores/Store';
 
- console.log(AnimationStore);
+console.log(Store);
+
+Store.subscribe(() =>
+console.log(store.getState())
+)
+
+store.dispatch({ type: 'ANIMATION.TICK' })
 
 // import './index.html';
 // import Renderer from './Renderer/Renderer';
