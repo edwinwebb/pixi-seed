@@ -16,6 +16,14 @@ module.exports = {
           use: {
             loader: 'babel-loader',
           }
+        },{
+          test: /\.html$/,
+          use: {
+            loader: 'file-loader',
+            options: {
+              name: 'index.html'
+            }
+          }
         }
       ]
     },

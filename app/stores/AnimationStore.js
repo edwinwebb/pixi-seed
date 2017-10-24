@@ -5,7 +5,7 @@ const defaultState = {
 }
 
 export default (state = defaultState, action = {}) => {
-  switch (key) {
+  switch (action.type) {
     case 'ANIMATION.TICK':
         return {
           ...state,

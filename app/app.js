@@ -6,17 +6,18 @@
  *
  */
 
- import Store from './stores/Store';
+import './index.html';
+import Store from './stores/Store';
 
 console.log(Store);
 
 Store.subscribe(() =>
-console.log(store.getState())
+console.log(Store.getState())
 )
 
-store.dispatch({ type: 'ANIMATION.TICK' })
+Store.dispatch({ type: 'ANIMATION.TICK' })
 
-// import './index.html';
+
 // import Renderer from './Renderer/Renderer';
 // import App from './displayobjects/App/App';
 // import AnimationStore from './stores/AnimationStore';
