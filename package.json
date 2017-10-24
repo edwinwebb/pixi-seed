@@ -24,12 +24,17 @@
     "tween.js": "^16.3.4"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^2.4.0",
     "file-loader": "^0.8.4",
     "html-loader": "^0.4.3",
     "json-loader": "^0.5.3",
     "reactman": "^3.2.0",
-    "rimraf": "^2.4.3",
+    "rimraf": "^2.6.2",
     "webpack": "^3.8.1"
   },
   "engines": {
