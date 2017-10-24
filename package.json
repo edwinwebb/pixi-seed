@@ -3,11 +3,6 @@
   "version": "0.3.0",
   "repository": "https://github.com/edwinwebb/pixi-seed",
   "description": "Pixi.js project seed / boiler-plate with ES6, Webpack and Redux",
-  "config": {
-    "buildDir": "./build",
-    "stageWidth": 1920,
-    "stageHeight": 1080
-  },
   "scripts": {
     "prestart": "npm install",
     "start": "NODE_ENV=development webpack-dev-server --content-base ./build/ --hot --inline --host 0.0.0.0",
