@@ -6,6 +6,12 @@ Webpack with ES6 provides a more class based approach to Pixi.js development and
 
 The project comes with Render and Animation stores and a ScaledContainer to help work across multiple devices with a ‘best-fit’ rendering methodology.
 
+## Roadmap
+* Change stores to REDUX
+* Update to Webpack V2
+* Update to Pixi v4
+* More impressive example
+
 ## Example Display Object
 Here's the PIXI.js bunny expressed as an interactive sprite in ES6.
 
