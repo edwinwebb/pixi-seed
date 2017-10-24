@@ -6,7 +6,7 @@
  *
  */
 
-import './index.html';
+// import './index.html';
 // import Renderer from './Renderer/Renderer';
 // import App from './displayobjects/App/App';
 // import AnimationStore from './stores/AnimationStore';
@@ -21,3 +21,5 @@ import './index.html';
 
 // renderer.addRenderable(app);
 // renderer.start();
+
+console.log('heello')
