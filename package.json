@@ -1,8 +1,8 @@
 {
   "name": "pixi-seed",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "repository": "https://github.com/edwinwebb/pixi-seed",
-  "description": "Pixi.js project seed / boiler-plate with ES6 and Webpack",
+  "description": "Pixi.js project seed / boiler-plate with ES6, Webpack and Redux",
   "config": {
     "buildDir": "./build",
     "stageWidth": 1920,
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "pixi.js": "^3.0.7",
+    "redux": "^3.7.2",
     "tween.js": "^16.3.4"
   },
   "devDependencies": {
@@ -36,10 +37,9 @@
     "reactman": "^3.2.0",
     "rimraf": "^2.4.3",
     "transform-loader": "^0.2.3",
-    "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.11.0"
+    "webpack": "^3.8.1"
   },
   "engines": {
-    "node": ">=5.0.0"
+    "node": ">=8.0.0"
   }
 }

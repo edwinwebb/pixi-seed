@@ -12,6 +12,25 @@ The project comes with Render and Animation stores and a ScaledContainer to help
 * Update to Pixi v4
 * More impressive example
 
+## Todo
+
+Investigate redux setup, is it really going to work with Pixi?
+ - the conntect state to props thing doesn't really work.
+ - stores and actions seem happy
+ - single store merging is sane
+ - single store over 
+ - current store setup is a bit long winded
+ - redux reduceres are nicer than current stores
+ - can I use navigation for scene control with history / router?
+     - router would require integration with something from Fido
+     - probably a V4 feature
+ - we want updates to stores to trigger a re-render, how would this merge with pixi?
+     - scenes would be shown / hidden?
+      - it's possible. Fido / screen manager & transitions
+ * summary : reducers are good. Just access the composed store from each app. As we are in a render loop vars are pulled in automatically. 
+ * task : rebuild current stores
+ 
+
 ## Example Display Object
 Here's the PIXI.js bunny expressed as an interactive sprite in ES6.
 
