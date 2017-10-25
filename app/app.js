@@ -33,4 +33,3 @@ Store.dispatch({ type: 'ANIMATION.TICK' })
 // renderer.addRenderable(app);
 // renderer.start();
 
-console.log('heello')

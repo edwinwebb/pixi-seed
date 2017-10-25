@@ -31,5 +31,6 @@ module.exports = {
       contentBase: path.join(__dirname, 'build'),
       compress: true,
       port: 8080
-    }
+    },
+    devtool : DEBUG ? 'cheap-module-source-map' : false,
 };
