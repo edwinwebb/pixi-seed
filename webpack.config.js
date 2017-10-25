@@ -13,6 +13,7 @@ module.exports = {
       rules: [
         {
           test: /\.js$/,
+          exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
           }
@@ -23,6 +24,11 @@ module.exports = {
             options: {
               name: 'index.html'
             }
+          }
+        },{
+          test: /\.jpe?g$|\.svg$|\.png$/,
+          use: {
+            loader: 'file-loader'
           }
         }
       ]

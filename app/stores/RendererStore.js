@@ -9,9 +9,11 @@ const defaultState = {
   ...windowSize()
 };
 
+export const RESIZE = 'RENDERER.RESIZE';
+
 export default (state = defaultState, action = {}) => {
   switch (action.type) {
-    case 'RENDERER.RESIZE':
+    case RESIZE:
         return {
           ...state,
           ...windowSize()

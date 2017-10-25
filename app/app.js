@@ -8,15 +8,18 @@
 
 import './index.html';
 import Store from './stores/Store';
+import Renderer from './Renderer/Renderer';
+import App from './displayobjects/App/App';
 
-console.log(Store);
+const renderer = new Renderer({});
+const app = new App();
 
-Store.subscribe(() =>
-console.log(Store.getState())
-)
+document.body.appendChild(renderer.view);
 
-Store.dispatch({ type: 'ANIMATION.TICK' })
+// AnimationStore.addChangeListener(() => TWEEN.update());
 
+renderer.addRenderable(app);
+renderer.start();
 
 // import Renderer from './Renderer/Renderer';
 // import App from './displayobjects/App/App';

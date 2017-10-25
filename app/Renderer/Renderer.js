@@ -1,8 +1,7 @@
-import PIXI from 'pixi.js';
-import RendererStore from '../stores/RendererStore';
-import AnimationStore from '../stores/AnimationStore';
+import { WebGLRenderer } from 'pixi.js';
+import Store from '../stores/Store';
 
-let renderables = new Set();
+const renderables = new Set();
 
 /**
  * GL Renderer with hooks into a Store
@@ -12,53 +11,28 @@ let renderables = new Set();
  * @exports Renderer
  * @extends WebGLRenderer
  */
-export default class Renderer extends PIXI.WebGLRenderer {
+export default class Renderer extends WebGLRenderer {
 
-  constructor(...args) {
+  constructor(options) {
 
-    super(...args);
-
-    //this.resolution = window.devicePixelRatio;
+    super(options);
 
     window.addEventListener('resize', this.resizeHandler.bind(this));
-
-    RendererStore.set('resolution', this.resolution);
-    RendererStore.set('stageWidth', args[0]);
-    RendererStore.set('stageHeight', args[1]);
-    RendererStore.set('stageCenter', new PIXI.Point(args[0] / 2, args[1] / 2));
-
-    this.setStore();
+    
+    Store.subscribe(()=>{
+      const { width, height } = Store.getState().Renderer;
+      this.resize(width, height);
+    })
 
     this.resizeHandler();
   }
 
   /**
-   * Set the stores width and height on resize
-   */
-  setStore() {
-    RendererStore.set('width', this.getWindowSize()[0]);
-    RendererStore.set('height', this.getWindowSize()[1]);
-  }
-
-  /**
-   * Sets's store and emits Change
+   * Dispatch resize
    * @return {null}
    */
   resizeHandler() {
-    this.resize(...this.getWindowSize());
-    this.setStore();
-    RendererStore.emitChange();
-  }
-
-  /**
-   * Get the current window size
-   * @return {null}
-   */
-  getWindowSize() {
-    var width = window.innerWidth;
-    var height = window.innerHeight;
-
-    return [width, height];
+    Store.dispatch({ type: 'RENDERER.RESIZE'});
   }
 
   /**
@@ -87,7 +61,7 @@ export default class Renderer extends PIXI.WebGLRenderer {
 
     if(this.active) {
       window.requestAnimationFrame(this.animate.bind(this));
-      AnimationStore.emitChange();
+      Store.dispatch({ type: 'ANIMATION.TICK' })
     }
   }
 
