@@ -15,22 +15,22 @@ export default class Bunny extends Sprite {
 
     super(texture);
 
-    this.tween = new Tween(this);
+    //this.tween = new Tween(this);
 
-    this.anchor.x = .5;
-    this.anchor.y = 1;
+    // this.anchor.x = .5;
+    // this.anchor.y = 1;
 
-    this.pivot.x = .5;
-    this.pivot.y = .5;
+    // this.pivot.x = .5;
+    // this.pivot.y = .5;
 
     this.interactive = true;
     this.on('mouseover', this.startSpin.bind(this));
   }
 
   startSpin() {
-    this.tween.to({rotation: Math.PI*2}, 1000);
-    this.tween.start();
-    this.tween.onComplete(() => this.rotation = 0);
+    // this.tween.to({rotation: Math.PI*2}, 1000);
+    // this.tween.start();
+    // this.tween.onComplete(() => this.rotation = 0);
   }
 
 }

@@ -1,10 +1,9 @@
 import ScaledContainer from '../ScaledContainer/ScaledContainer.js';
-import { Container } from 'pixi.js';
 import Store from '../../stores/Store';
 import BunnyGroup from '../BunnyGroup/BunnyGroup.js';
 import Bunny from '../Bunny/Bunny.js';
 import Background from '../Background/Background.js';
-import RendererStore from '../../stores/RendererStore.js';
+
 /**
  * Main App Display Object
  *
@@ -22,26 +21,29 @@ export default class App extends ScaledContainer {
 
     this.addChild(bg);
 
-    //this.addBunnies();
+    this.addBunnies();
 
   }
 
   addBunnies() {
-    const { x, y } = Store.getState().Renderer.stageCenter;
+    const { height, stageCenter } = Store.getState().Renderer;
+    const { x, y } = stageCenter;
     const cx = x;
     const cy = y;
 
-    let group1 = new BunnyGroup();
+    //let group1 = new BunnyGroup();
     let b1 = new Bunny();
 
-    b1.position.x = cx;
+    console.log(x, y)
+
+    b1.position.x =1920/2;
     b1.position.y = cy;
 
-    group1.position.x = cx;
-    group1.position.y = cy + (RendererStore.get('stageHeight')*.25);
+    // group1.position.x = cx;
+    // group1.position.y = cy + (height*.25);
 
     this.addChild(b1);
-    this.addChild(group1);
+    //this.addChild(group1);
   }
 
 }
