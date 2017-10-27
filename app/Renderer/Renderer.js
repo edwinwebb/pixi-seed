@@ -17,14 +17,9 @@ export default class Renderer extends WebGLRenderer {
 
     super(options);
 
-    window.addEventListener('resize', this.resizeHandler.bind(this));
-    
-    Store.subscribe(()=>{
-      const { width, height } = Store.getState().Renderer;
-      this.resize(width, height);
-    })
+    console.log(options)
 
-    this.resizeHandler();
+    window.addEventListener('resize', this.resizeHandler.bind(this));
   }
 
   /**
@@ -33,6 +28,7 @@ export default class Renderer extends WebGLRenderer {
    */
   resizeHandler() {
     Store.dispatch({ type: 'RENDERER.RESIZE'});
+    this.resize(window.innerWidth, window.innerHeight);
   }
 
   /**

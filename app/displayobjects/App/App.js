@@ -13,7 +13,7 @@ import RendererStore from '../../stores/RendererStore.js';
  * @exports App
  * @extends ScaledContainer
  */
-export default class App extends Container {
+export default class App extends ScaledContainer {
 
   constructor(...args) {
     var bg = new Background();

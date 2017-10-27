@@ -1,8 +1,6 @@
 import { Container, Point } from 'pixi.js';
-
-// default target size
-let tw = 1920;
-let th = 1080;
+import Store from '../../stores/Store';
+import { checkScreen } from '../../utils';
 
 /**
  * ScaledContainer
@@ -21,25 +19,39 @@ export default class ScaledContainer extends Container {
    * @param  {number} target_h height
    * @return {null}
    */
-  constructor(target_w,target_h) {
+  constructor(...args) {
 
-    super();
+    super(...args);
 
-    tw = target_w || RendererStore.get('target_width');
-    th = target_h || RendererStore.get('target_height');
+    this.currentSize = {
+      w: 0,
+      h: 0
+    }
 
-    RendererStore.addChangeListener(this.resizeHandler.bind(this));
+    Store.subscribe(()=>{
+      const { width, height } = Store.getState().Renderer;
+      const { w, h } = this.currentSize;
+
+      if(checkScreen(width, height, w, h)) {
+        this.resizeHandler(width, height);
+      }
+ 
+      this.currentSize = {
+        w: width,
+        h: height
+      }
+
+    });
 
     this.resizeHandler();
+
   }
 
   /**
-   * Scales and positions Container to best-fit to farget dimensions
+   * Scales and positions Container to best-fit to target dimensions
    * @return {null}
    */
-  resizeHandler() {
-    const rw = RendererStore.get('width');
-    const rh = RendererStore.get('height');
+  resizeHandler(rw, rh, tw = 1920, th = 1080) {
     const Xratio = rw / tw;
     const Yratio = rh / th;
     let scaleRatio = rw > rh ? Xratio : Yratio;
