@@ -43,7 +43,7 @@ export default class ScaledContainer extends Container {
 
     });
 
-    this.resizeHandler();
+    //this.resizeHandler();
 
   }
 

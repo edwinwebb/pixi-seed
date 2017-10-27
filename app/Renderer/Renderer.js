@@ -17,9 +17,9 @@ export default class Renderer extends WebGLRenderer {
 
     super(options);
 
-    console.log(options)
-
     window.addEventListener('resize', this.resizeHandler.bind(this));
+
+    this.resizeHandler()
   }
 
   /**
