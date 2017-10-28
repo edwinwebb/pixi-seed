@@ -15,7 +15,7 @@ export default class Bunny extends Sprite {
 
     super(texture);
 
-    //this.tween = new Tween(this);
+    this.tween = new Tween(this.position);
 
     this.anchor.x = .5;
     this.anchor.y = 1;
@@ -28,9 +28,9 @@ export default class Bunny extends Sprite {
   }
 
   startSpin() {
-    // this.tween.to({rotation: Math.PI*2}, 1000);
-    // this.tween.start();
-    // this.tween.onComplete(() => this.rotation = 0);
+    this.tween.to({x: Math.PI*2}, 1000);
+    this.tween.start();
+    this.tween.onComplete(() => this.rotation = 100);
   }
 
 }

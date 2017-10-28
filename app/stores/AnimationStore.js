@@ -1,5 +1,6 @@
 const defaultState = {
-  tick: 0,
+  tick: 1,
+  previousTick: 0,
   startTime: window.performance.now(),
   currentTime: window.performance.now()
 }
@@ -10,6 +11,7 @@ export default (state = defaultState, action = {}) => {
         return {
           ...state,
           tick: state.tick + 1,
+          previousTick: state.tick,
           currentTime: window.performance.now()
         }
       break;

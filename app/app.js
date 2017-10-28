@@ -9,11 +9,21 @@
 import './index.html';
 import Renderer from './Renderer/Renderer';
 import App from './displayobjects/App/App';
+import Store from './stores/Store';
+import TWEEN from 'tween.js';
 
-const renderer = new Renderer({});
+const renderer = new Renderer({resolution: 1});
 const app = new App();
 
 document.body.appendChild(renderer.view);
+
+Store.subscribe( ()=>{
+  const { tick, previousTick } = Store.getState().Animation;
+  if(tick !== previousTick) {
+    TWEEN.update()
+  }
+})
+
 
 // AnimationStore.addChangeListener(() => TWEEN.update());
 

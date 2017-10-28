@@ -34,8 +34,6 @@ export default class App extends ScaledContainer {
     //let group1 = new BunnyGroup();
     let b1 = new Bunny();
 
-    console.log(x, y)
-
     b1.position.x = cx;
     b1.position.y = cy;
 
