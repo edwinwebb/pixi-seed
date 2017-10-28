@@ -1,3 +1,5 @@
+import { canvasWidth, canvasHeight } from '../constants/AppConstants';
+
 const windowSize = () => ({
   width: window.innerWidth,
   height: window.innerHeight,
@@ -6,6 +8,12 @@ const windowSize = () => ({
 });
 
 const defaultState = {
+  canvasHeight,
+  canvasWidth,
+  canvasCenter: {
+    x: canvasWidth / 2,
+    y: canvasHeight / 2
+  },
   ...windowSize()
 };
 

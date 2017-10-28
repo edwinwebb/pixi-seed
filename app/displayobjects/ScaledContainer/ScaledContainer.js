@@ -29,11 +29,11 @@ export default class ScaledContainer extends Container {
     }
 
     Store.subscribe(()=>{
-      const { width, height } = Store.getState().Renderer;
+      const { width, height, canvasWidth, canvasHeight } = Store.getState().Renderer;
       const { w, h } = this.currentSize;
 
       if(checkScreen(width, height, w, h)) {
-        this.resizeHandler(width, height);
+        this.resizeHandler(width, height, canvasWidth, canvasHeight);
       }
  
       this.currentSize = {

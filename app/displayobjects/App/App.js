@@ -26,8 +26,8 @@ export default class App extends ScaledContainer {
   }
 
   addBunnies() {
-    const { height, stageCenter } = Store.getState().Renderer;
-    const { x, y } = stageCenter;
+    const { height, stageCenter, canvasCenter } = Store.getState().Renderer;
+    const { x, y } = canvasCenter;
     const cx = x;
     const cy = y;
 
@@ -36,7 +36,7 @@ export default class App extends ScaledContainer {
 
     console.log(x, y)
 
-    b1.position.x =1920/2;
+    b1.position.x = cx;
     b1.position.y = cy;
 
     // group1.position.x = cx;

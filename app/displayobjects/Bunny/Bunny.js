@@ -17,8 +17,8 @@ export default class Bunny extends Sprite {
 
     //this.tween = new Tween(this);
 
-    // this.anchor.x = .5;
-    // this.anchor.y = 1;
+    this.anchor.x = .5;
+    this.anchor.y = 1;
 
     // this.pivot.x = .5;
     // this.pivot.y = .5;
