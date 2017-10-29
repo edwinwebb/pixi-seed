@@ -6,7 +6,7 @@ import { checkScreen } from '../../utils';
  * ScaledContainer
  *
  * A DisplayObjectContainer which attempts to scale and best-fit into the
- * window size dispatched from the RendererStrore
+ * window size dispatched from the RendererStore
  *
  * @extends Container
  * @exports ScaledContainer
@@ -35,16 +35,12 @@ export default class ScaledContainer extends Container {
       if(checkScreen(width, height, w, h)) {
         this.resizeHandler(width, height, canvasWidth, canvasHeight);
       }
- 
+
       this.currentSize = {
         w: width,
         h: height
       }
-
     });
-
-    //this.resizeHandler();
-
   }
 
   /**
@@ -59,7 +55,7 @@ export default class ScaledContainer extends Container {
     let offsetX = (rw / 2) - (tw*scaleRatio / 2);
     let offsetY = (rh / 2) - (th*scaleRatio / 2);
 
-    if(th*scaleRatio < rh) {
+    if(th * scaleRatio < rh) {
       scaleRatio = Yratio;
       scale = new Point(scaleRatio, scaleRatio);
       offsetX = (rw / 2) - (tw*scaleRatio / 2);

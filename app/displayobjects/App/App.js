@@ -20,25 +20,20 @@ export default class App extends ScaledContainer {
     super(...args);
 
     this.addChild(bg);
-
     this.addBunnies();
-
   }
 
   addBunnies() {
-    const { height, stageCenter, canvasCenter } = Store.getState().Renderer;
+    const { height, canvasCenter } = Store.getState().Renderer;
     const { x, y } = canvasCenter;
-    const cx = x;
-    const cy = y;
+    const group1 = new BunnyGroup();
+    const b1 = new Bunny();
 
-    let group1 = new BunnyGroup();
-    let b1 = new Bunny();
+    b1.position.x = x;
+    b1.position.y = y;
 
-    b1.position.x = cx;
-    b1.position.y = cy;
-
-    group1.position.x = cx;
-    group1.position.y = cy + (height*.25);
+    group1.position.x = x;
+    group1.position.y = y + (height*.25);
 
     this.addChild(b1, group1);
   }
