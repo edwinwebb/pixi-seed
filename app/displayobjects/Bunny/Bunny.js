@@ -28,8 +28,7 @@ export default class Bunny extends Sprite {
 
   startSpin() {
     if(!this.tween.isPlaying()) {
-      this.tween.stop().to({rotation: this.rotation + Math.PI * 2}, 333).start();
+      this.tween.to({rotation: this.rotation + Math.PI * 2}, 333).start();
     }
   }
-
 }

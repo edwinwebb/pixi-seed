@@ -12,7 +12,7 @@ import App from './displayobjects/App/App';
 import Store from './stores/Store';
 import * as TWEEN from 'es6-tween';
 
-const renderer = new Renderer({resolution: 1});
+const renderer = new Renderer({resolution: window.devicePixelRatio});
 const app = new App();
 
 document.body.appendChild(renderer.view);

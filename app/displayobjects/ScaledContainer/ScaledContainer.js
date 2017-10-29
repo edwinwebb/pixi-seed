@@ -52,14 +52,14 @@ export default class ScaledContainer extends Container {
     const Yratio = rh / th;
     let scaleRatio = rw > rh ? Xratio : Yratio;
     let scale = new Point(scaleRatio, scaleRatio);
-    let offsetX = (rw / 2) - (tw*scaleRatio / 2);
-    let offsetY = (rh / 2) - (th*scaleRatio / 2);
+    let offsetX = (rw / 2) - (tw * scaleRatio / 2);
+    let offsetY = (rh / 2) - (th * scaleRatio / 2);
 
     if(th * scaleRatio < rh) {
       scaleRatio = Yratio;
       scale = new Point(scaleRatio, scaleRatio);
-      offsetX = (rw / 2) - (tw*scaleRatio / 2);
-      offsetY = (rh / 2) - (th*scaleRatio / 2);
+      offsetX = (rw / 2) - (tw * scaleRatio / 2);
+      offsetY = (rh / 2) - (th * scaleRatio / 2);
     }
 
     this.position.x = offsetX;
