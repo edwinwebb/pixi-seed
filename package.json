@@ -13,9 +13,9 @@
     "reactman": "reactman --config ./templates/reactman.config.js"
   },
   "dependencies": {
+    "es6-tween": "^3.8.24",
     "pixi.js": "^5.0.0-alpha",
-    "redux": "^3.7.2",
-    "tween.js": "^16.6.0"
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

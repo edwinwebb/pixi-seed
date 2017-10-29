@@ -1,4 +1,4 @@
-import { Tween } from 'tween.js';
+import { Tween } from 'es6-tween';
 import { Sprite, Texture } from 'pixi.js';
 import BUNNY from './bunny.png';
 
@@ -15,22 +15,21 @@ export default class Bunny extends Sprite {
 
     super(texture);
 
-    this.tween = new Tween(this.position);
-
+    this.tween = new Tween(this);
     this.anchor.x = .5;
     this.anchor.y = 1;
 
-    // this.pivot.x = .5;
-    // this.pivot.y = .5;
+    this.pivot.x = .5;
+    this.pivot.y = .5;
 
     this.interactive = true;
     this.on('mouseover', this.startSpin.bind(this));
   }
 
   startSpin() {
-    this.tween.to({x: Math.PI*2}, 1000);
-    this.tween.start();
-    this.tween.onComplete(() => this.rotation = 100);
+    if(!this.tween.isPlaying()) {
+      this.tween.stop().to({rotation: this.rotation + Math.PI * 2}, 333).start();
+    }
   }
 
 }

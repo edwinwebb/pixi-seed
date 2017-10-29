@@ -10,7 +10,7 @@ import './index.html';
 import Renderer from './Renderer/Renderer';
 import App from './displayobjects/App/App';
 import Store from './stores/Store';
-import TWEEN from 'tween.js';
+import * as TWEEN from 'es6-tween';
 
 const renderer = new Renderer({resolution: 1});
 const app = new App();
@@ -23,9 +23,6 @@ Store.subscribe( ()=>{
     TWEEN.update()
   }
 })
-
-
-// AnimationStore.addChangeListener(() => TWEEN.update());
 
 renderer.addRenderable(app);
 renderer.start();

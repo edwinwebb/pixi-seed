@@ -31,17 +31,16 @@ export default class App extends ScaledContainer {
     const cx = x;
     const cy = y;
 
-    //let group1 = new BunnyGroup();
+    let group1 = new BunnyGroup();
     let b1 = new Bunny();
 
     b1.position.x = cx;
     b1.position.y = cy;
 
-    // group1.position.x = cx;
-    // group1.position.y = cy + (height*.25);
+    group1.position.x = cx;
+    group1.position.y = cy + (height*.25);
 
-    this.addChild(b1);
-    //this.addChild(group1);
+    this.addChild(b1, group1);
   }
 
 }
