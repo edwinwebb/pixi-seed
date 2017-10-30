@@ -15,6 +15,9 @@ import * as TWEEN from 'es6-tween';
 import Example from './screens/Example';
 import Loader from './screens/Loader';
 
+import BG from './displayobjects/Background/diagnostic.png';
+import BUNNY from './displayobjects/Bunny/bunny.png';
+
 const renderer = new Renderer({resolution: window.devicePixelRatio});
 const app = new ScaledContainer();
 const example = new Example();
@@ -33,7 +36,7 @@ Store.subscribe( ()=>{
 
 // add loader and begin
 app.addChild(loader);
-loader.start();
+loader.start([BG, BUNNY]);
 
 // remove loader then show example once complete
 loader.onLoaded( ()=>{
