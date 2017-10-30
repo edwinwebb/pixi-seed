@@ -21,7 +21,6 @@ import SEEDS from './displayobjects/Background/millet.jpg';
 
 const renderer = new Renderer({resolution: window.devicePixelRatio});
 const app = new ScaledContainer();
-const example = new Example();
 const loader = new Loader();
 
 // append
@@ -41,6 +40,7 @@ loader.start([BG, BUNNY, SEEDS]);
 
 // remove loader then show example once complete
 loader.onLoaded( ()=>{
+  const example = new Example();
   app.removeChild(loader);
   app.addChild(example);
 } );
