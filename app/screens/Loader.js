@@ -24,6 +24,13 @@ export default class LoaderScreen extends Container {
     this.bar.y = canvasHeight / 2;
     this.bar.scale.x = 0;
     this.progress = 0;
+    this.ease = 0;
+
+    // animate it
+    this.unsubscribe = Store.subscribe( ()=>{
+      this.ease += (this.progress - this.ease) * 0.03;
+      this.bar.scale.x = this.ease;
+    });
 
     this.addChild(this.bar);
   }
@@ -36,12 +43,12 @@ export default class LoaderScreen extends Container {
   }
 
   onUpdate(ldr) {
-    this.progress = ldr.progress;
-    this.bar.scale.x = ldr.progress / 100;
+    this.progress = ldr.progress / 100;
   }
 
   onComplete() {
     this.done();
+    this.unsubscribe();
   }
 
   onLoaded(callback = ()=>{}) {
