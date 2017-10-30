@@ -12,6 +12,10 @@ The project comes with Render and Animation stores and a ScaledContainer to help
 * Update to Pixi V5
 * Update to es6-tween
 
+## TODO
+* Add a screen manager
+* Add a loader for BG & Bunnies
+
 ## Getting started
 
 Clone the project and remove the git repository:
