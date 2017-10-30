@@ -17,6 +17,7 @@ import Loader from './screens/Loader';
 
 import BG from './displayobjects/Background/diagnostic.png';
 import BUNNY from './displayobjects/Bunny/bunny.png';
+import SEEDS from './displayobjects/Background/millet.jpg';
 
 const renderer = new Renderer({resolution: window.devicePixelRatio});
 const app = new ScaledContainer();
@@ -36,7 +37,7 @@ Store.subscribe( ()=>{
 
 // add loader and begin
 app.addChild(loader);
-loader.start([BG, BUNNY]);
+loader.start([BG, BUNNY, SEEDS]);
 
 // remove loader then show example once complete
 loader.onLoaded( ()=>{

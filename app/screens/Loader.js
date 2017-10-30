@@ -9,31 +9,29 @@ import { Container, loader } from 'pixi.js';
 
 export default class LoaderScreen extends Container {
 
-  constructor(...args) {
-    super(...args);
-
+  constructor() {
+    super();
     this.loader = loader;
+    this.done = ()=>{}
   }
 
   start(assets = []) {
-    assets.forEach( (asset) => {
-      loader.add(asset);
-    });
-
-    loader.load(this.onComplete.bind(this));
+    loader.add(assets);
+    loader.load();
     loader.onProgress.add(this.onUpdate.bind(this));
+    loader.onComplete.add(this.onComplete.bind(this));
   }
 
-  onUpdate(...args) {
-    console.log(args);
+  onUpdate(ldr) {
+    console.log(ldr.progress)
   }
 
   onComplete() {
-    this.onLoaded();
+    this.done();
   }
 
   onLoaded(callback = ()=>{}) {
-    callback();
+    this.done = callback;
   }
 
 }

@@ -1,5 +1,6 @@
-import { Container } from 'pixi.js';
+import { Container, Sprite, BLEND_MODES } from 'pixi.js';
 import TEXTURE from './diagnostic.png';
+import MILLET from './millet.jpg';
 
 /**
  * Loads the adds the diagnostic image
@@ -12,9 +13,13 @@ export default class Background extends Container {
   constructor() {
     super();
 
-    var bg = PIXI.Sprite.fromImage(TEXTURE);
+    const bg = Sprite.fromImage(TEXTURE);
+    const seeds = Sprite.fromImage(MILLET);
 
-    this.addChild(bg);
+    seeds.alpha = 0.3;
+    seeds.blendMode = BLEND_MODES.MULTIPLY;
+
+    this.addChild(bg, seeds);
   }
 
 }
