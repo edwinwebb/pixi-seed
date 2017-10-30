@@ -11,6 +11,10 @@ The project comes with Render and Animation stores and a ScaledContainer to help
 * Update to Webpack V2
 * Update to Pixi V5
 * Update to es6-tween
+* Added a loader
+
+## TODO
+* Add a screen manager
 
 ## Getting started
 
@@ -33,7 +37,7 @@ export const canvasWidth = 1920;
 export const canvasHeight = 1080;
 ```
 
-The ScaledObjectContainer used in App.js will try a best fit approach. You can turn this off by using a standard Container instead. 
+The ScaledObjectContainer used in entry.js will try a best fit approach. You can turn this off by using a standard Container instead. 
 
 ## npm scripts
 

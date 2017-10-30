@@ -1,8 +1,8 @@
-import ScaledContainer from '../ScaledContainer/ScaledContainer.js';
-import Store from '../../stores/Store';
-import BunnyGroup from '../BunnyGroup/BunnyGroup.js';
-import Bunny from '../Bunny/Bunny.js';
-import Background from '../Background/Background.js';
+import { Container } from 'pixi.js';
+import Store from '../stores/Store';
+import BunnyGroup from '../displayobjects/BunnyGroup/BunnyGroup.js';
+import Bunny from '../displayobjects/Bunny/Bunny.js';
+import Background from '../displayobjects/Background/Background.js';
 
 /**
  * Main App Display Object
@@ -12,7 +12,7 @@ import Background from '../Background/Background.js';
  * @exports App
  * @extends ScaledContainer
  */
-export default class App extends ScaledContainer {
+export default class App extends Container {
 
   constructor(...args) {
     var bg = new Background();

@@ -15,7 +15,7 @@ module.exports = {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader',
+            loader: 'babel-loader'
           }
         },{
           test: /\.html$/,
@@ -38,5 +38,5 @@ module.exports = {
       compress: true,
       port: 8080
     },
-    devtool : DEBUG ? 'cheap-module-source-map' : false,
+    devtool: DEBUG ? 'cheap-module-source-map' : false
 };
