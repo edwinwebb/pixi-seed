@@ -1,4 +1,4 @@
-import {Container} from 'pixi.js';
+import { Container } from 'pixi.js';
 import Bunny from '../Bunny/Bunny.js';
 
 /**
@@ -20,7 +20,7 @@ export default class BunnyGroup extends Container {
       let bunny = new Bunny();
 
       bunny.position.x = (Math.random() * spreadX) - (spreadX / 2);
-      bunny.position.y = -(Math.random() * spreadY * .2);
+      bunny.position.y = -(Math.random() * spreadY * 0.2);
 
       this.addChild(bunny);
     }

@@ -1,21 +1,17 @@
-import PIXI from 'pixi.js';
-import RendererStore from '../../stores/RendererStore.js';
-import { RESIZE } from '../../constants/AppConstants.js';
-
-// default target size
-let tw = 1920;
-let th = 1080;
+import { Container, Point } from 'pixi.js';
+import Store from '../../stores/Store';
+import { checkScreen } from '../../utils';
 
 /**
  * ScaledContainer
  *
  * A DisplayObjectContainer which attempts to scale and best-fit into the
- * window size dispatched from the RendererStrore
+ * window size dispatched from the RendererStore
  *
  * @extends Container
  * @exports ScaledContainer
  */
-export default class ScaledContainer extends PIXI.Container {
+export default class ScaledContainer extends Container {
 
   /**
    * Set target size
@@ -23,37 +19,47 @@ export default class ScaledContainer extends PIXI.Container {
    * @param  {number} target_h height
    * @return {null}
    */
-  constructor(target_w,target_h) {
+  constructor(...args) {
 
-    super();
+    super(...args);
 
-    tw = target_w || RendererStore.get('target_width');
-    th = target_h || RendererStore.get('target_height');
+    this.currentSize = {
+      w: 0,
+      h: 0
+    }
 
-    RendererStore.addChangeListener(this.resizeHandler.bind(this));
+    Store.subscribe(()=>{
+      const { width, height, canvasWidth, canvasHeight } = Store.getState().Renderer;
+      const { w, h } = this.currentSize;
 
-    this.resizeHandler();
+      if(checkScreen(width, height, w, h)) {
+        this.resizeHandler(width, height, canvasWidth, canvasHeight);
+      }
+
+      this.currentSize = {
+        w: width,
+        h: height
+      }
+    });
   }
 
   /**
-   * Scales and positions Container to best-fit to farget dimensions
+   * Scales and positions Container to best-fit to target dimensions
    * @return {null}
    */
-  resizeHandler() {
-    const rw = RendererStore.get('width');
-    const rh = RendererStore.get('height');
+  resizeHandler(rw, rh, tw = 1920, th = 1080) {
     const Xratio = rw / tw;
     const Yratio = rh / th;
     let scaleRatio = rw > rh ? Xratio : Yratio;
-    let scale = new PIXI.Point(scaleRatio, scaleRatio);
-    let offsetX = (rw / 2) - (tw*scaleRatio / 2);
-    let offsetY = (rh / 2) - (th*scaleRatio / 2);
+    let scale = new Point(scaleRatio, scaleRatio);
+    let offsetX = (rw / 2) - (tw * scaleRatio / 2);
+    let offsetY = (rh / 2) - (th * scaleRatio / 2);
 
-    if(th*scaleRatio < rh) {
+    if(th * scaleRatio < rh) {
       scaleRatio = Yratio;
-      scale = new PIXI.Point(scaleRatio, scaleRatio);
-      offsetX = (rw / 2) - (tw*scaleRatio / 2);
-      offsetY = (rh / 2) - (th*scaleRatio / 2);
+      scale = new Point(scaleRatio, scaleRatio);
+      offsetX = (rw / 2) - (tw * scaleRatio / 2);
+      offsetY = (rh / 2) - (th * scaleRatio / 2);
     }
 
     this.position.x = offsetX;

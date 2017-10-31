@@ -1,36 +1,42 @@
 var path = require('path');
-var pkg = require('./package.json')
 var DEBUG = process.env.NODE_ENV !== 'production';
-var util = require('util');
-var entry = {
-  app: ['./app.js']
-};
 
 module.exports = {
-    context: path.join(__dirname, 'app'),
-    entry: entry,
-    debug : DEBUG,
-    target : 'web',
-    devtool : DEBUG ? 'inline-source-map' : false,
-    output: {
-        path: path.resolve(pkg.config.buildDir),
-        publicPath: DEBUG ? "/" : "./",
-        filename: "bundle.js"
+    entry: {
+      index: ['./app/entry.js']
     },
-    node: {
-      fs: 'empty'
+    output: {
+      filename: 'bundle.js',
+      path: path.resolve(__dirname, 'build')
     },
     module: {
-        loaders: [
-          { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader", query:{presets:['es2015']}},
-          { test: /\.html$/, exclude: /node_modules/, loader: "file-loader?name=[path][name].[ext]"},
-          { test: /\.jpe?g$|\.svg$|\.png$/, exclude: /node_modules/, loader: "file-loader?name=[path][name].[ext]"},
-          { test: /\.json$/, exclude: /node_modules/, loader: "json"},
-          { test: /\.json$/, include: path.join(__dirname, 'node_modules', 'pixi.js'),loader: 'json'}
-        ],
-	      postLoaders: [{
-          include: path.resolve(__dirname, 'node_modules/pixi.js'),
-          loader: 'transform?brfs'
-        }]
-    }
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader'
+          }
+        },{
+          test: /\.html$/,
+          use: {
+            loader: 'file-loader',
+            options: {
+              name: 'index.html'
+            }
+          }
+        },{
+          test: /\.jpe?g$|\.svg$|\.png$/,
+          use: {
+            loader: 'file-loader'
+          }
+        }
+      ]
+    },
+    devServer: {
+      contentBase: path.join(__dirname, 'build'),
+      compress: true,
+      port: 8080
+    },
+    devtool: DEBUG ? 'cheap-module-source-map' : false
 };

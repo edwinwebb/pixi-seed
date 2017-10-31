@@ -1,4 +1,2 @@
-export const constants = {
-  RESIZE: 'APP_RESIZE',
-  ANIMATE: 'APP_ANIMATE'
-}
+export const canvasWidth = 1920;
+export const canvasHeight = 1080;
