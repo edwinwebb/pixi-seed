@@ -9,7 +9,7 @@ module.exports = {
   "scripts" : {
     "displayobject" : {
       "files" : {
-        "displayobject.js" : "displayobjects/{%=o.exportsLowerCase%}/{%=o.exports%}.js"
+        "displayobject.js" : "displayobjects/{%=o.exports%}/{%=o.exports%}.js"
       },
       "script" : [{
         "name": "exports",
