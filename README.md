@@ -14,6 +14,9 @@ The project comes with Render and Animation stores and a ScaledContainer to help
 * Added a loader
 
 ## TODO
+* Fix up Reactman scripts
+* Add actions and action types to Stores (https://github.com/erikras/ducks-modular-redux)
+* Script to redo package.json on new project
 * Add a screen manager
 
 ## Getting started

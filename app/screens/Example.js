@@ -7,10 +7,10 @@ import Background from '../displayobjects/Background/Background.js';
 /**
  * Main App Display Object
  *
- * Adds a background and some bunnies to it's self
+ * Adds a background and some spinning bunnies
  *
  * @exports App
- * @extends ScaledContainer
+ * @extends Container
  */
 export default class App extends Container {
 
