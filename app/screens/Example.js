@@ -1,8 +1,8 @@
 import { Container } from 'pixi.js';
 import Store from '../stores/Store';
-import BunnyGroup from '../displayobjects/BunnyGroup/BunnyGroup.js';
-import Bunny from '../displayobjects/Bunny/Bunny.js';
-import Background from '../displayobjects/Background/Background.js';
+import BunnyGroup from '../displayobjects/BunnyGroup/BunnyGroup';
+import Bunny from '../displayobjects/Bunny/Bunny';
+import Background from '../displayobjects/Background/Background';
 
 /**
  * Main App Display Object
@@ -13,9 +13,8 @@ import Background from '../displayobjects/Background/Background.js';
  * @extends Container
  */
 export default class App extends Container {
-
   constructor(...args) {
-    var bg = new Background();
+    const bg = new Background();
 
     super(...args);
 
@@ -33,9 +32,8 @@ export default class App extends Container {
     b1.position.y = y;
 
     group1.position.x = x;
-    group1.position.y = y + (height*.25);
+    group1.position.y = y + height * 0.25;
 
     this.addChild(b1, group1);
   }
-
 }

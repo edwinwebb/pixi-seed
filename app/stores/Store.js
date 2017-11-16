@@ -1,10 +1,22 @@
-import { createStore, combineReducers } from 'redux'
-import Animation from './AnimationStore';
-import Renderer from './RendererStore';
+import { createStore, combineReducers } from "redux";
+import { devToolsEnhancer } from "redux-devtools-extension";
 
-const Combi = combineReducers({
+import Animation from "./AnimationStore";
+import Renderer from "./RendererStore";
+
+const combinedReducers = combineReducers({
   Animation,
   Renderer
 });
 
-export default createStore(Combi)
+const store = createStore(
+  combinedReducers,
+  process.env.DEBUG &&
+    devToolsEnhancer({ actionsBlacklist: ["ANIMATION.TICK"] })
+);
+
+if (process.env.DEBUG) {
+  window.store = store;
+}
+
+export default store;
