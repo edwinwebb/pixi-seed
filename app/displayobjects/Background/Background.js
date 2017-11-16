@@ -1,6 +1,6 @@
-import { Container, Sprite, BLEND_MODES } from 'pixi.js';
-import TEXTURE from './diagnostic.png';
-import MILLET from './millet.jpg';
+import { Container, Sprite, BLEND_MODES } from "pixi.js";
+import TEXTURE from "./diagnostic.png";
+import MILLET from "./millet.jpg";
 
 /**
  * Loads the adds the diagnostic image
@@ -9,7 +9,6 @@ import MILLET from './millet.jpg';
  * @extends Container
  */
 export default class Background extends Container {
-
   constructor() {
     super();
 
@@ -21,5 +20,4 @@ export default class Background extends Container {
 
     this.addChild(bg, seeds);
   }
-
 }

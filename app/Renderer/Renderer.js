@@ -1,7 +1,5 @@
-import { WebGLRenderer } from 'pixi.js';
-import Store from '../stores/Store';
-
-const renderables = new Set();
+import { WebGLRenderer } from "pixi.js";
+import Store from "../stores/Store";
 
 /**
  * GL Renderer with hooks into a Store
@@ -12,14 +10,14 @@ const renderables = new Set();
  * @extends WebGLRenderer
  */
 export default class Renderer extends WebGLRenderer {
+  renderables = new Set(); // TODO: Think about that
 
   constructor(options) {
-
     super(options);
 
-    window.addEventListener('resize', this.resizeHandler.bind(this));
+    window.addEventListener("resize", this.resizeHandler.bind(this));
 
-    this.resizeHandler()
+    this.resizeHandler();
   }
 
   /**
@@ -27,7 +25,7 @@ export default class Renderer extends WebGLRenderer {
    * @return {null}
    */
   resizeHandler() {
-    Store.dispatch({ type: 'RENDERER.RESIZE'});
+    Store.dispatch({ type: "RENDERER.RESIZE" });
     this.resize(window.innerWidth, window.innerHeight);
   }
 
@@ -55,9 +53,9 @@ export default class Renderer extends WebGLRenderer {
   animate() {
     this.renderRenderables();
 
-    if(this.active) {
+    if (this.active) {
       window.requestAnimationFrame(this.animate.bind(this));
-      Store.dispatch({ type: 'ANIMATION.TICK' })
+      Store.dispatch({ type: "ANIMATION.TICK" });
     }
   }
 
@@ -67,7 +65,7 @@ export default class Renderer extends WebGLRenderer {
    * @returns {renderable}
    */
   addRenderable(renderable) {
-    return renderables.add(renderable);
+    return this.renderables.add(renderable);
   }
 
   /**
@@ -76,10 +74,10 @@ export default class Renderer extends WebGLRenderer {
    * @returns {renderable}
    */
   removeRenderable(renderable) {
-    let hasRenderable = renderables.has(renderable);
+    const hasRenderable = this.renderables.has(renderable);
 
-    if(hasRenderable) {
-      renderables.delete(renderable);
+    if (hasRenderable) {
+      this.renderables.delete(renderable);
     }
 
     return hasRenderable;
@@ -90,9 +88,8 @@ export default class Renderer extends WebGLRenderer {
    * @return {null}
    */
   renderRenderables() {
-    for (let entry of renderables) {
+    this.renderables.forEach(entry => {
       this.render(entry);
-    }
+    });
   }
-
 }

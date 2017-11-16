@@ -1,6 +1,6 @@
-import { Tween } from 'es6-tween';
-import { Sprite, Texture } from 'pixi.js';
-import BUNNY from './bunny.png';
+import { Tween } from "es6-tween";
+import { Sprite, Texture } from "pixi.js";
+import BUNNY from "./bunny.png";
 
 /**
  * A bunny which spins on it's feet when moused over
@@ -9,7 +9,6 @@ import BUNNY from './bunny.png';
  * @extends Sprite
  */
 export default class Bunny extends Sprite {
-
   constructor() {
     const texture = Texture.fromImage(BUNNY);
 
@@ -23,12 +22,12 @@ export default class Bunny extends Sprite {
     this.pivot.y = 0.5;
 
     this.interactive = true;
-    this.on('mouseover', this.startSpin.bind(this));
+    this.on("mouseover", this.startSpin.bind(this));
   }
 
   startSpin() {
-    if(!this.tween.isPlaying()) {
-      this.tween.to({rotation: this.rotation + Math.PI * 2}, 333).start();
+    if (!this.tween.isPlaying()) {
+      this.tween.to({ rotation: this.rotation + Math.PI * 2 }, 333).start();
     }
   }
 }
