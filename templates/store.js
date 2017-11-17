@@ -1,8 +1,8 @@
-export const NEW = 'NEW';
+const NEU = 'seed/animation/NEU';
 
 export default (state = {}, action = {}) => {
   switch (action.type) {
-    case NEW:
+    case NEU:
         return {
           ...state
         }
@@ -12,3 +12,5 @@ export default (state = {}, action = {}) => {
       break;
   }
 }
+
+export const neu = () => ({type: NEU});

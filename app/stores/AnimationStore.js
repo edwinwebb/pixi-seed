@@ -1,3 +1,7 @@
+// template : https://github.com/erikras/ducks-modular-redux
+
+const TICK = 'seed/animation/TICK';
+
 const defaultState = {
   tick: 1,
   previousTick: 0,
@@ -7,7 +11,7 @@ const defaultState = {
 
 export default (state = defaultState, action = {}) => {
   switch (action.type) {
-    case 'ANIMATION.TICK':
+    case TICK:
         return {
           ...state,
           tick: state.tick + 1,
@@ -20,3 +24,5 @@ export default (state = defaultState, action = {}) => {
       break;
   }
 }
+
+export const tick = () => ({ type: TICK });
