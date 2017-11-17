@@ -3,8 +3,6 @@ import Store, { AnimationStore } from '../stores/Store';
 import {tick} from '../stores/AnimationStore';
 import {resize} from '../stores/RendererStore';
 
-const renderables = new Set();
-
 /**
  * GL Renderer with hooks into a Store
  *
@@ -21,7 +19,7 @@ export default class Renderer extends WebGLRenderer {
 
     window.addEventListener('resize', this.resizeHandler.bind(this));
 
-    this.resizeHandler()
+    this.resizeHandler();
   }
 
   /**
@@ -55,45 +53,9 @@ export default class Renderer extends WebGLRenderer {
    * @return {null}
    */
   animate() {
-    this.renderRenderables();
-
     if(this.active) {
       window.requestAnimationFrame(this.animate.bind(this));
       AnimationStore.dispatch(tick());
-    }
-  }
-
-  /**
-   * Add a renderable object to the animation loop
-   * @param {renderable} renderable object
-   * @returns {renderable}
-   */
-  addRenderable(renderable) {
-    return renderables.add(renderable);
-  }
-
-  /**
-   * Remove a renderable object from the animation loop
-   * @param {renderable} renderable object
-   * @returns {renderable}
-   */
-  removeRenderable(renderable) {
-    let hasRenderable = renderables.has(renderable);
-
-    if(hasRenderable) {
-      renderables.delete(renderable);
-    }
-
-    return hasRenderable;
-  }
-
-  /**
-   * Loop over renderables and call the render function on them
-   * @return {null}
-   */
-  renderRenderables() {
-    for (let entry of renderables) {
-      this.render(entry);
     }
   }
 

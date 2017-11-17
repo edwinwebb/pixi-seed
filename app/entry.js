@@ -28,7 +28,8 @@ document.body.appendChild(renderer.view);
 
 // animate loop for tween
 AnimationStore.subscribe( ()=>{
-    TWEEN.update()
+    TWEEN.update();
+    renderer.render(app);
 });
 
 // add loader and begin
@@ -43,6 +44,5 @@ loader.onLoaded( ()=>{
 } );
 
 // start the render loop
-renderer.addRenderable(app);
 renderer.start();
 
