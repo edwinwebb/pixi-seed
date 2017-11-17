@@ -1,5 +1,5 @@
 import { WebGLRenderer } from 'pixi.js';
-import Store from '../stores/Store';
+import Store, { AnimationStore } from '../stores/Store';
 import {tick} from '../stores/AnimationStore';
 import {resize} from '../stores/RendererStore';
 
@@ -59,7 +59,7 @@ export default class Renderer extends WebGLRenderer {
 
     if(this.active) {
       window.requestAnimationFrame(this.animate.bind(this));
-      Store.dispatch(tick());
+      AnimationStore.dispatch(tick());
     }
   }
 

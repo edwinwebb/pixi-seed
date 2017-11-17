@@ -10,7 +10,7 @@
 import './index.html';
 import Renderer from './Renderer/Renderer';
 import ScaledContainer from './displayobjects/ScaledContainer/ScaledContainer';
-import Store from './stores/Store';
+import { AnimationStore } from './stores/Store';
 import * as TWEEN from 'es6-tween';
 import Example from './screens/Example';
 import Loader from './screens/Loader';
@@ -27,11 +27,8 @@ const loader = new Loader();
 document.body.appendChild(renderer.view);
 
 // animate loop for tween
-Store.subscribe( ()=>{
-  const { tick, previousTick } = Store.getState().Animation;
-  if(tick !== previousTick) {
+AnimationStore.subscribe( ()=>{
     TWEEN.update()
-  }
 });
 
 // add loader and begin
