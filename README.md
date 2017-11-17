@@ -16,6 +16,7 @@ The project comes with Render and Animation stores and a ScaledContainer to help
 ## TODO
 * Script to redo package.json on new project
 * Add a screen manager
+* Custom GLSL example
 
 ## Getting started
 
