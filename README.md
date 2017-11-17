@@ -7,17 +7,15 @@ Webpack with ES6 provides a more class based approach to Pixi.js development and
 The project comes with Render and Animation stores and a ScaledContainer to help work across multiple devices with a ‘best-fit’ rendering methodology.
 
 ## V3 Updates
-* Change stores to REDUX
+* Change stores to REDUX /w ducks
 * Update to Webpack V2
 * Update to Pixi V4.6
 * Update to es6-tween
-* Added a loader
+* Added a loader screen
 
 ## TODO
-* Add actions and action types to Stores (https://github.com/erikras/ducks-modular-redux)
 * Script to redo package.json on new project
 * Add a screen manager
-* Uncombine stores, too many updates
 
 ## Getting started
 
