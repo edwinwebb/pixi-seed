@@ -7,4 +7,7 @@ const Combi = combineReducers({
   Renderer
 });
 
+export const AnimationStore = createStore(Animation);
+export const RendererStore = createStore(Renderer);
+
 export default createStore(Combi)

@@ -1,6 +1,6 @@
 # Pixi Seed
 
-This project is designed to bootstrap your Pixi.js development with modern tooling, technology and project organisation. Use as boilerplate for your next project.
+This project is designed to bootstrap your [Pixi.js](https://github.com/pixijs/pixi.js) development with modern tooling, technology and project organisation. Use as boilerplate for your next project.
 
 Webpack with ES6 provides a more class based approach to Pixi.js development and allows you to include assets within your JS. [Reactman](https://www.npmjs.com/package/reactman) enables you to quickly add code to your project and the using Redux Stores helps keep your data in one place.
 
@@ -17,6 +17,7 @@ The project comes with Render and Animation stores and a ScaledContainer to help
 * Add actions and action types to Stores (https://github.com/erikras/ducks-modular-redux)
 * Script to redo package.json on new project
 * Add a screen manager
+* Uncombine stores, too many updates
 
 ## Getting started
 
