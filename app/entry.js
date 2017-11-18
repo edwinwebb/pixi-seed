@@ -43,7 +43,7 @@ loader.onLoaded(() => {
   const colorFilter = new ColorFilter();
   app.removeChild(loader);
   app.addChild(example);
-  console.log(colorFilter);
+  colorFilter.color = 0xffff00;
   app.filters = [colorFilter];
 });
 

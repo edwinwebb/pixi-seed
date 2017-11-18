@@ -1,3 +1,5 @@
-void main(){
-   gl_FragColor = vec4(1.0,1.0,0.5,1.0);
+uniform vec3 color;
+
+void main(void){
+   gl_FragColor = vec4(color.r, color.g, color.b, 1.0);
 }
