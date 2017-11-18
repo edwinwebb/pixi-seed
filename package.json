@@ -30,6 +30,8 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.11.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-plugin-prettier": "^2.3.1",
     "file-loader": "^0.8.4",
     "husky": "^0.14.3",
     "lint-staged": "^5.0.0",
@@ -42,7 +44,8 @@
   "engines": {
     "node": ">=8.0.0"
   },
+  "plugins": ["prettier"],
   "lint-staged": {
-    "*.{js,json}": ["prettier --write", "git add"]
+    "*.{js,json}": ["prettier --write --single-quote", "git add"]
   }
 }

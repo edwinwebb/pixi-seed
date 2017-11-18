@@ -1,6 +1,6 @@
 // template : https://github.com/erikras/ducks-modular-redux
 
-const TICK = "seed/animation/TICK";
+const TICK = 'seed/animation/TICK';
 
 const defaultState = {
   tick: 1,

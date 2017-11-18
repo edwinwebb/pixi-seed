@@ -9,7 +9,6 @@ import BUNNY from './bunny.png';
  * @extends Sprite
  */
 export default class Bunny extends Sprite {
-
   constructor() {
     const texture = Texture.fromImage(BUNNY);
 
@@ -27,8 +26,8 @@ export default class Bunny extends Sprite {
   }
 
   startSpin() {
-    if(!this.tween.isPlaying()) {
-      this.tween.to({rotation: this.rotation + Math.PI * 2}, 333).start();
+    if (!this.tween.isPlaying()) {
+      this.tween.to({ rotation: this.rotation + Math.PI * 2 }, 333).start();
     }
   }
 }

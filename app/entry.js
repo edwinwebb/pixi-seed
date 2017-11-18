@@ -19,7 +19,7 @@ import BG from './displayobjects/Background/diagnostic.png';
 import BUNNY from './displayobjects/Bunny/bunny.png';
 import SEEDS from './displayobjects/Background/millet.jpg';
 
-const renderer = new Renderer({resolution: window.devicePixelRatio});
+const renderer = new Renderer({ resolution: window.devicePixelRatio });
 const app = new ScaledContainer();
 const loader = new Loader();
 
@@ -27,9 +27,9 @@ const loader = new Loader();
 document.body.appendChild(renderer.view);
 
 // animate loop for tween
-AnimationStore.subscribe( ()=>{
-    TWEEN.update();
-    renderer.render(app);
+AnimationStore.subscribe(() => {
+  TWEEN.update();
+  renderer.render(app);
 });
 
 // add loader and begin
@@ -37,12 +37,11 @@ app.addChild(loader);
 loader.start([BG, BUNNY, SEEDS]);
 
 // remove loader then show example once complete
-loader.onLoaded( ()=>{
+loader.onLoaded(() => {
   const example = new Example();
   app.removeChild(loader);
   app.addChild(example);
-} );
+});
 
 // start the render loop
 renderer.start();
-

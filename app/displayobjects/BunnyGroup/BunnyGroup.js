@@ -8,7 +8,6 @@ import Bunny from '../Bunny/Bunny.js';
  * @extends Container
  */
 export default class BunnyGroup extends Container {
-
   constructor() {
     const spreadX = 800;
     const spreadY = 100;
@@ -16,10 +15,10 @@ export default class BunnyGroup extends Container {
 
     super();
 
-    for(let i = 0; i < count; i++) {
+    for (let i = 0; i < count; i++) {
       let bunny = new Bunny();
 
-      bunny.position.x = (Math.random() * spreadX) - (spreadX / 2);
+      bunny.position.x = Math.random() * spreadX - spreadX / 2;
       bunny.position.y = -(Math.random() * spreadY * 0.2);
 
       this.addChild(bunny);

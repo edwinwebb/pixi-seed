@@ -10,11 +10,6 @@
           "description": "Print spaces between brackets in object literals.",
           "type": "boolean"
         },
-        "jsxBracketSameLine": {
-          "default": false,
-          "description": "Put the > of a multi-line JSX element at the end of the last line instead of being alone on the next line.",
-          "type": "boolean"
-        },
         "parser": {
           "enum": [
             "babylon",
@@ -39,7 +34,7 @@
           "type": "boolean"
         },
         "singleQuote": {
-          "default": false,
+          "default": true,
           "description": "Use single quotes instead of double quotes.",
           "type": "boolean"
         },

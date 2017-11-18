@@ -13,7 +13,6 @@ import Background from '../displayobjects/Background/Background.js';
  * @extends Container
  */
 export default class App extends Container {
-
   constructor(...args) {
     var bg = new Background();
 
@@ -33,9 +32,8 @@ export default class App extends Container {
     b1.position.y = y;
 
     group1.position.x = x;
-    group1.position.y = y + (height*.25);
+    group1.position.y = y + height * 0.25;
 
     this.addChild(b1, group1);
   }
-
 }

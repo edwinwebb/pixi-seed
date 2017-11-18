@@ -1,7 +1,7 @@
 import { WebGLRenderer } from 'pixi.js';
 import Store, { AnimationStore } from '../stores/Store';
-import {tick} from '../stores/AnimationStore';
-import {resize} from '../stores/RendererStore';
+import { tick } from '../stores/AnimationStore';
+import { resize } from '../stores/RendererStore';
 
 /**
  * GL Renderer with hooks into a Store
@@ -12,9 +12,7 @@ import {resize} from '../stores/RendererStore';
  * @extends WebGLRenderer
  */
 export default class Renderer extends WebGLRenderer {
-
   constructor(options) {
-
     super(options);
 
     window.addEventListener('resize', this.resizeHandler.bind(this));
@@ -53,10 +51,9 @@ export default class Renderer extends WebGLRenderer {
    * @return {null}
    */
   animate() {
-    if(this.active) {
+    if (this.active) {
       window.requestAnimationFrame(this.animate.bind(this));
       AnimationStore.dispatch(tick());
     }
   }
-
 }
