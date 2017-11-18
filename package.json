@@ -2,23 +2,16 @@
   "name": "pixi-seed",
   "version": "0.3.3",
   "repository": "https://github.com/edwinwebb/pixi-seed",
-  "description": "Pixi.js project seed / boiler-plate with ES6, Webpack and Redux",
-  "keywords": [
-    "webgl",
-    "pixi",
-    "pixijs",
-    "seed",
-    "boilerplate",
-    "es6"
-  ],
-  "contributors": [
-    "Edwin Webb <edwin.webb@gmail.com>"
-  ],
+  "description":
+    "Pixi.js project seed / boiler-plate with ES6, Webpack and Redux",
+  "keywords": ["webgl", "pixi", "pixijs", "seed", "boilerplate", "es6"],
+  "contributors": ["Edwin Webb <edwin.webb@gmail.com>"],
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server",
     "webpack": "webpack -p --config ./webpack.config.js",
     "build": "NODE_ENV=production npm run webpack",
     "prewebpack": "npm run clean",
+    "precommit": "lint-staged",
     "clean": "rimraf ./build && mkdir ./build",
     "lint": "eslint ./app/**/*.js",
     "reactman": "reactman --config ./templates/reactman.config.js"
@@ -36,6 +29,9 @@
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.11.0",
     "file-loader": "^0.8.4",
+    "husky": "^0.14.3",
+    "lint-staged": "^5.0.0",
+    "prettier": "1.8.2",
     "reactman": "^3.2.0",
     "rimraf": "^2.6.2",
     "webpack": "^3.8.1",
@@ -43,5 +39,8 @@
   },
   "engines": {
     "node": ">=8.0.0"
+  },
+  "lint-staged": {
+    "*.{js,json}": ["prettier --write", "git add"]
   }
 }
