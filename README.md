@@ -6,17 +6,19 @@ Webpack with ES6 provides a more class based approach to Pixi.js development and
 
 The project comes with Render and Animation stores and a ScaledContainer to help work across multiple devices with a ‘best-fit’ rendering methodology.
 
+A basic loading screen has recently been added.
+
 ## V3 Updates
 * Change stores to REDUX /w ducks
 * Update to Webpack V2
 * Update to Pixi V4.6
 * Update to es6-tween
 * Added a loader screen
+* Added a custom filter example
 
 ## TODO
 * Script to redo package.json on new project
 * Add a screen manager
-* Custom GLSL example
 
 ## Getting started
 
@@ -57,9 +59,6 @@ filetypes, look at the webpack.config.js and add a file loader.
 // Filename: app.js
 import assetURL from './logo.png';
 ```
-
-## Removing the bootstrapped files
-It's as easy as removing all the child folders in ./app/ then emptying entry.js.
 
 ## License
 
