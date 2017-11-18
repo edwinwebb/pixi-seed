@@ -9,7 +9,6 @@ import MILLET from './millet.jpg';
  * @extends Container
  */
 export default class Background extends Container {
-
   constructor() {
     super();
 
@@ -21,5 +20,4 @@ export default class Background extends Container {
 
     this.addChild(bg, seeds);
   }
-
 }

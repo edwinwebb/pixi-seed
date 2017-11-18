@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers } from 'redux';
 import Animation from './AnimationStore';
 import Renderer from './RendererStore';
 
@@ -8,4 +8,4 @@ const Combi = combineReducers({
 
 export const AnimationStore = createStore(Animation);
 
-export default createStore(Combi)
+export default createStore(Combi);
