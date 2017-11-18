@@ -3,7 +3,14 @@
   "version": "0.3.3",
   "repository": "https://github.com/edwinwebb/pixi-seed",
   "description": "Pixi.js project seed / boiler-plate with ES6, Webpack and Redux",
-  "keywords": ["webgl", "pixi", "pixijs", "seed", "boilerplate", "es6"],
+  "keywords": [
+    "webgl",
+    "pixi",
+    "pixijs",
+    "seed",
+    "boilerplate",
+    "es6"
+  ],
   "contributors": [
     "Edwin Webb <edwin.webb@gmail.com>"
   ],
@@ -27,7 +34,7 @@
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "eslint": "^2.4.0",
+    "eslint": "^4.11.0",
     "file-loader": "^0.8.4",
     "reactman": "^3.2.0",
     "rimraf": "^2.6.2",
