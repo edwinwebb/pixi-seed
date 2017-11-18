@@ -36,6 +36,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^5.0.0",
     "prettier": "1.8.2",
+    "raw-loader": "^0.5.1",
     "reactman": "^3.2.0",
     "rimraf": "^2.6.2",
     "webpack": "^3.8.1",

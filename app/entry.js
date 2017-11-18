@@ -14,6 +14,7 @@ import { AnimationStore } from './stores/Store';
 import * as TWEEN from 'es6-tween';
 import Example from './screens/Example';
 import Loader from './screens/Loader';
+import ColorFilter from './filters/color/color';
 
 import BG from './displayobjects/Background/diagnostic.png';
 import BUNNY from './displayobjects/Bunny/bunny.png';
@@ -39,8 +40,11 @@ loader.start([BG, BUNNY, SEEDS]);
 // remove loader then show example once complete
 loader.onLoaded(() => {
   const example = new Example();
+  const colorFilter = new ColorFilter();
   app.removeChild(loader);
   app.addChild(example);
+  console.log(colorFilter);
+  app.filters = [colorFilter];
 });
 
 // start the render loop
