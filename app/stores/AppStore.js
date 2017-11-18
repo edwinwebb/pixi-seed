@@ -3,7 +3,7 @@ const FILTER_ON = 'seed/animation/FILTER_ON';
 
 export default (
   state = {
-    color: 0xff0000,
+    color: 0x888888,
     coloron: false
   },
   action = {}
