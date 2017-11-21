@@ -1,10 +1,19 @@
 {
   "name": "pixi-seed",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "repository": "https://github.com/edwinwebb/pixi-seed",
   "description":
     "Pixi.js project seed / boiler-plate with ES6, Webpack and Redux",
-  "keywords": ["webgl", "pixi", "pixijs", "seed", "boilerplate", "es6"],
+  "keywords": [
+    "webgl",
+    "pixi",
+    "pixijs",
+    "pixi.js",
+    "seed",
+    "boilerplate",
+    "es6",
+    "glsl"
+  ],
   "contributors": ["Edwin Webb <edwin.webb@gmail.com>"],
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server",
@@ -36,6 +45,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^5.0.0",
     "prettier": "1.8.2",
+    "raw-loader": "^0.5.1",
     "reactman": "^3.2.0",
     "rimraf": "^2.6.2",
     "webpack": "^3.8.1",
