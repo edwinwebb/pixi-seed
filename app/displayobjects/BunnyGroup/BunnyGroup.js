@@ -9,7 +9,7 @@ import Bunny from '../Bunny/Bunny.js';
  */
 export default class BunnyGroup extends Container {
   constructor() {
-    const spreadX = 800;
+    const spreadX = 1900;
     const spreadY = 100;
     const count = 500;
 
