@@ -23,6 +23,7 @@ export default class Thingie extends Sprite {
     this.offset = new Point(0, 0);
     this.targetOffset = new Point(0, 0);
     this.originPosition = new Point(0, 0);
+    this.alpha = 0.9;
   }
 
   setInitialPoint(x, y) {

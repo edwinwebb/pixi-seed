@@ -28,8 +28,8 @@ export default class App extends Container {
 
     const logo = new Logo();
     this.addChild(bg);
-    this.addThingies();
     this.addChild(logo);
+    this.addThingies();
     this.mousepos = new Point(500, 500);
   }
 
