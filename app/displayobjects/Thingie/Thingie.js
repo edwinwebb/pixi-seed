@@ -8,7 +8,6 @@
 import { Sprite, Texture, Point } from 'pixi.js';
 import ONE from './1.png';
 import TWO from './2.png';
-import THREE from './3.png';
 import FOUR from './4.png';
 import FIVE from './5.png';
 

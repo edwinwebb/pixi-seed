@@ -4,6 +4,7 @@ import { AnimationStore } from '../stores/Store';
 import Logo from '../displayobjects/Logo/Logo';
 import Background from '../displayobjects/Background/Background.js';
 import Thingie from '../displayobjects/Thingie/Thingie';
+import RedLine from '../displayobjects/RedLine/RedLine';
 
 const isNear = (p1, p2) => {
   const a = p1.x - p2.x;
@@ -28,6 +29,7 @@ export default class App extends Container {
 
     const logo = new Logo();
     this.addChild(bg);
+    this.addLines();
     this.addChild(logo);
     this.addThingies();
     this.mousepos = new Point(500, 500);
@@ -51,6 +53,16 @@ export default class App extends Container {
     });
 
     this.interactive = true;
+  }
+
+  addLines() {
+    const count = 100;
+    for (let index = 0; index < count; index++) {
+      const y = Math.sin(index * 2) * 1500 - 500;
+      const step = 1920 / count * index;
+      const l = new RedLine(step, y);
+      this.addChild(l);
+    }
   }
 
   mousemove(e) {
