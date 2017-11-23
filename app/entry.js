@@ -9,10 +9,9 @@
  * - Subscribes and Dispatches to AppStore & DOM
  */
 import * as TWEEN from 'es6-tween';
-import { utils } from 'pixi.js';
+import { utils, Container } from 'pixi.js';
 import './index.html';
 import Renderer from './Renderer/Renderer';
-import ScaledContainer from './displayobjects/ScaledContainer/ScaledContainer';
 import { AnimationStore } from './stores/Store';
 import Store from './stores/Store';
 import Example from './screens/Example';
@@ -23,7 +22,7 @@ import BG from './displayobjects/Background/soft.jpg';
 import LOGO from './displayobjects/Logo/logo@2x.png';
 
 const renderer = new Renderer({ resolution: window.devicePixelRatio }); // an extension of WebGLRenderer which dispatches to RendererStore
-const app = new ScaledContainer(); // Auto scale to screen size, subscribed to RendererStore
+const app = new Container(); // Auto scale to screen size, subscribed to RendererStore
 const loader = new Loader(); // Basic Loading screen
 
 // Controls for filter/DOM Redux example

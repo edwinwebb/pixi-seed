@@ -1,4 +1,4 @@
-import { Container } from 'pixi.js';
+import { Container, Point } from 'pixi.js';
 import Store from '../stores/Store';
 import { AnimationStore } from '../stores/Store';
 import Logo from '../displayobjects/Logo/Logo';
@@ -26,28 +26,18 @@ export default class App extends Container {
 
     super(...args);
 
-    this.logo = new Logo();
+    const logo = new Logo();
     this.addChild(bg);
-    this.addBunnies();
-    const test = new Thingie();
-    this.addChild(test);
-    test.position.set(500, 500);
     this.addThingies();
-    this.addChild(this.logo);
-  }
-
-  addBunnies() {
-    const { canvasCenter } = Store.getState().Renderer;
-    const { x, y } = canvasCenter;
-
-    this.logo.position.set(x, y);
+    this.addChild(logo);
+    this.mousepos = new Point(500, 500);
   }
 
   addThingies() {
     this.thingies = [];
-    for (let index = 0; index < 100; index++) {
+    for (let index = 0; index < 500; index++) {
       const t = new Thingie();
-      t.position.set(1920 * Math.random(), 1380 * Math.random() - 300);
+      t.setInitialPoint(1920 * Math.random(), 1380 * Math.random() - 300);
       const far =
         this.thingies.findIndex(t2 => isNear(t.position, t2.position)) === -1;
       if (far) {
@@ -57,7 +47,13 @@ export default class App extends Container {
     }
 
     AnimationStore.subscribe(() => {
-      this.thingies.forEach(t => t.update());
+      this.thingies.forEach(t => t.update(this.mousepos));
     });
+
+    this.interactive = true;
+  }
+
+  mousemove(e) {
+    this.mousepos = e.data.global;
   }
 }

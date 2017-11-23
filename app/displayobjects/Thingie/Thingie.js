@@ -5,7 +5,7 @@
  * @extends Sprite
  */
 
-import { Sprite, Texture } from 'pixi.js';
+import { Sprite, Texture, Point } from 'pixi.js';
 import ONE from './1.png';
 import TWO from './2.png';
 import THREE from './3.png';
@@ -16,16 +16,40 @@ const assets = [ONE, TWO, FOUR, FIVE];
 
 export default class Thingie extends Sprite {
   constructor() {
-    const asset = assets[Math.floor(Math.random() * (assets.length - 1))];
+    const asset = assets[Math.floor(Math.random() * assets.length)];
     const texture = Texture.fromImage(asset);
     super(texture);
     this.speed = Math.random() / 2 + 0.25;
+    this.offset = new Point(0, 0);
+    this.targetOffset = new Point(0, 0);
+    this.originPosition = new Point(0, 0);
   }
 
-  update() {
-    this.y += this.speed;
-    if (this.y > 1080) {
-      this.y = -100;
+  setInitialPoint(x, y) {
+    this.position.set(x, y);
+    this.originPosition.set(x, y);
+  }
+
+  update(mousepos) {
+    const { x, y } = mousepos;
+    const x1 = this.position.x;
+    const y1 = this.position.y;
+    const xDist = x1 - x;
+    const yDist = y1 - y;
+    const dist = Math.sqrt(xDist * xDist + yDist * yDist);
+    if (dist < 200) {
+      const angle = Math.atan2(yDist, xDist);
+      const xaDist = Math.cos(angle) * dist;
+      const yaDist = Math.sin(angle) * dist;
+      this.targetOffset.set(xaDist, yaDist);
+    } else {
+      this.targetOffset.set(0, 0);
     }
+    this.offset.x += (this.targetOffset.x - this.offset.x) * 0.01;
+    this.offset.y += (this.targetOffset.y - this.offset.x) * 0.01;
+    this.position.set(
+      this.originPosition.x + this.offset.x,
+      this.originPosition.y + this.offset.y
+    );
   }
 }
