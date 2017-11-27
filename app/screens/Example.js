@@ -40,9 +40,8 @@ export default class App extends Container {
     for (let index = 0; index < 500; index++) {
       const t = new Thingie();
       t.setInitialPoint(1920 * Math.random(), 1380 * Math.random() - 300);
-      const far =
-        this.thingies.findIndex(t2 => isNear(t.position, t2.position)) === -1;
-      if (far) {
+      const near = this.thingies.some(t2 => isNear(t.position, t2.position));
+      if (!near) {
         this.thingies.push(t);
         this.addChild(t);
       }
