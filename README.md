@@ -33,7 +33,7 @@ npm start
 ```
 
 Then visit http://localhost:8080
-
+## Stapped Files
 You can configure your canvas size in the AppConstants.js file.
 
 ```js
@@ -41,14 +41,19 @@ export const canvasWidth = 1920;
 export const canvasHeight = 1080;
 ```
 
-The ScaledObjectContainer used in entry.js will try a best fit approach. You can turn this off by using a standard Container instead. 
+The ScaledObjectContainer will try a best fit approach. Used in Logo and Background to auto scale.
+
+RedLine.js gives a Tween.js example
+
+Thingie.js gives an animation loop update example.
+
 
 ## npm scripts
 
 * `npm start` - Build and start the app in development mode at http://localhost:8080
 * `npm run build` - Run a production build, outputs to ./build/
 * `npm run lint` - Lint your code
-* `npm run reactman` - Generate code for a DisplayObject or Store
+* `npm run reactman` - Generate code for a DisplayObject or Store from command prompt. See 
 
 ## Static assets
 

@@ -6,7 +6,7 @@ import ScaledContainer from '../ScaledContainer/ScaledContainer';
  * Loads the adds the diagnostic image
  *
  * @exports Background
- * @extends Container
+ * @extends ScaledContainer
  */
 export default class Background extends ScaledContainer {
   constructor() {
