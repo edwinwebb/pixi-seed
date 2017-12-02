@@ -32,8 +32,8 @@ export default class Thingie extends Sprite {
 
   update(mousepos) {
     const { x, y } = mousepos;
-    const x1 = this.position.x;
-    const y1 = this.position.y;
+    const x1 = this.originPosition.x;
+    const y1 = this.originPosition.y;
     const xDist = x1 - x;
     const yDist = y1 - y;
     const dist = Math.sqrt(xDist * xDist + yDist * yDist);
@@ -46,7 +46,7 @@ export default class Thingie extends Sprite {
       this.targetOffset.set(0, 0);
     }
     this.offset.x += (this.targetOffset.x - this.offset.x) * 0.01;
-    this.offset.y += (this.targetOffset.y - this.offset.x) * 0.01;
+    this.offset.y += (this.targetOffset.y - this.offset.y) * 0.01;
     this.position.set(
       this.originPosition.x + this.offset.x,
       this.originPosition.y + this.offset.y

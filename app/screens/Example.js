@@ -1,5 +1,5 @@
 import { Container, Point } from 'pixi.js';
-import Store from '../stores/Store';
+import { canvasWidth, canvasHeight } from '../constants/AppConstants';
 import { AnimationStore } from '../stores/Store';
 import Logo from '../displayobjects/Logo/Logo';
 import Background from '../displayobjects/Background/Background.js';
@@ -30,16 +30,19 @@ export default class App extends Container {
     const logo = new Logo();
     this.addChild(bg);
     this.addLines();
-    this.addChild(logo);
     this.addThingies();
+    this.addChild(logo);
     this.mousepos = new Point(500, 500);
   }
 
   addThingies() {
     this.thingies = [];
-    for (let index = 0; index < 500; index++) {
+    for (let index = 0; index < 200; index++) {
       const t = new Thingie();
-      t.setInitialPoint(1920 * Math.random(), 1380 * Math.random() - 300);
+      t.setInitialPoint(
+        canvasWidth * Math.random(),
+        (canvasHeight + 300) * Math.random() - 300
+      );
       const near = this.thingies.some(t2 => isNear(t.position, t2.position));
       if (!near) {
         this.thingies.push(t);
@@ -57,14 +60,17 @@ export default class App extends Container {
   addLines() {
     const count = 100;
     for (let index = 0; index < count; index++) {
-      const y = Math.sin(index * 2) * 1500 - 500;
-      const step = 1920 / count * index;
+      const y = Math.sin(index * 2) * canvasHeight - 500;
+      const step = canvasWidth / count * index;
       const l = new RedLine(step, y);
       this.addChild(l);
     }
   }
 
   mousemove(e) {
-    this.mousepos = e.data.global;
+    const { x, y } = e.data.global;
+    if (this.mousepos.x !== x && this.mousepos.y !== y) {
+      this.mousepos.set(x, y);
+    }
   }
 }
