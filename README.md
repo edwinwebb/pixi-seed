@@ -1,4 +1,4 @@
-![PixiSeed](https://github.com/edwinwebb/pixi-seed/tree/master/app/displayobjects/Logo/logo@2x.png)
+![PixiSeed](https://github.com/edwinwebb/pixi-seed/tree/master/app/displayobjects/Logo/logo@2x.png "Pixi Seed")
 
 # Pixi Seed
 
@@ -58,7 +58,7 @@ Thingie.js gives an animation loop update example.
 * `npm start` - Build and start the app in development mode at http://localhost:8080
 * `npm run build` - Run a production build, outputs to ./build/
 * `npm run lint` - Lint your code
-* `npm run reactman` - Generate code for a DisplayObject or Store from command prompt. See 
+* `npm run reactman` - Generate code for a DisplayObject or Store from command prompt. See [here](http://edwinwebb.github.io/reactman/).
 
 ## Static assets
 
