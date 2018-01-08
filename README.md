@@ -1,4 +1,4 @@
-![PixiSeed](https://github.com/edwinwebb/pixi-seed/tree/master/app/displayobjects/Logo/logo@2x.png "Pixi Seed")
+![PixiSeed](https://github.com/edwinwebb/pixi-seed/raw/master/app/displayobjects/Logo/logo%402x.png "Pixi Seed")
 
 # Pixi Seed
 
