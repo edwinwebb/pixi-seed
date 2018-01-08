@@ -21,9 +21,7 @@
     "build": "NODE_ENV=production npm run webpack",
     "format":
       "find app -name '*.js' | xargs -I{} ./node_modules/.bin/prettier --write --single-quote {}",
-    "prewebpack": "npm run clean",
     "precommit": "lint-staged",
-    "clean": "rm -rf ./build && mkdir ./build",
     "lint": "eslint ./app/**/*.js",
     "reactman": "reactman --config ./templates/reactman.config.js"
   },
