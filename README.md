@@ -2,6 +2,8 @@
 
 # Pixi Seed
 
+[Demo](http://edwinwebb.github.io/pixi-seed/)
+
 This project is designed to bootstrap your [Pixi.js](https://github.com/pixijs/pixi.js) development with modern tooling, technology and project organisation. Use as boilerplate for your next project.
 
 Webpack with ES6 provides a more class based approach to Pixi.js development and allows you to include assets within your JS. [Reactman](https://www.npmjs.com/package/reactman) enables you to quickly add code to your project and the using Redux Stores helps keep your data in one place.
