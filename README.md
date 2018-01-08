@@ -6,9 +6,7 @@ This project is designed to bootstrap your [Pixi.js](https://github.com/pixijs/p
 
 Webpack with ES6 provides a more class based approach to Pixi.js development and allows you to include assets within your JS. [Reactman](https://www.npmjs.com/package/reactman) enables you to quickly add code to your project and the using Redux Stores helps keep your data in one place.
 
-The project comes with Render and Animation stores and a ScaledContainer to help work across multiple devices with a ‘best-fit’ rendering methodology.
-
-A basic loading screen has recently been added.
+The project comes with Render and Animation stores and a ScaledContainer to help work across multiple devices with a ‘best-fit’ rendering methodology. The code contains demos for TweenJS and renderer update loops.
 
 ## V3 Updates
 * Change stores to REDUX /w ducks
