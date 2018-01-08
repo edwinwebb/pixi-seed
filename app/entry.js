@@ -9,22 +9,20 @@
  * - Subscribes and Dispatches to AppStore & DOM
  */
 import * as TWEEN from 'es6-tween';
-import { utils } from 'pixi.js';
+import { utils, Container } from 'pixi.js';
 import './index.html';
 import Renderer from './Renderer/Renderer';
-import ScaledContainer from './displayobjects/ScaledContainer/ScaledContainer';
 import { AnimationStore } from './stores/Store';
 import Store from './stores/Store';
 import Example from './screens/Example';
 import Loader from './screens/Loader';
 import ColorFilter from './filters/color/color';
 import { updateFilterColor, updateFilterIsOn } from './stores/AppStore';
-import BG from './displayobjects/Background/diagnostic.png';
-import BUNNY from './displayobjects/Bunny/bunny.png';
-import SEEDS from './displayobjects/Background/millet.jpg';
+import BG from './displayobjects/Background/soft.jpg';
+import LOGO from './displayobjects/Logo/logo@2x.png';
 
 const renderer = new Renderer({ resolution: window.devicePixelRatio }); // an extension of WebGLRenderer which dispatches to RendererStore
-const app = new ScaledContainer(); // Auto scale to screen size, subscribed to RendererStore
+const app = new Container(); // Auto scale to screen size, subscribed to RendererStore
 const loader = new Loader(); // Basic Loading screen
 
 // Controls for filter/DOM Redux example
@@ -60,7 +58,7 @@ colorOnInput.addEventListener('change', v =>
 
 // Add loader to App Display Object and start loading assets
 app.addChild(loader);
-loader.start([BG, BUNNY, SEEDS]);
+loader.start([BG, LOGO]);
 
 // remove loader then show example once asset loading is complete
 loader.onLoaded(() => {

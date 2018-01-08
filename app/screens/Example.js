@@ -1,15 +1,24 @@
-import { Container } from 'pixi.js';
-import Store from '../stores/Store';
-import BunnyGroup from '../displayobjects/BunnyGroup/BunnyGroup.js';
-import Bunny from '../displayobjects/Bunny/Bunny.js';
+import { Container, Point } from 'pixi.js';
+import { canvasWidth, canvasHeight } from '../constants/AppConstants';
+import { AnimationStore } from '../stores/Store';
+import Logo from '../displayobjects/Logo/Logo';
 import Background from '../displayobjects/Background/Background.js';
+import Thingie from '../displayobjects/Thingie/Thingie';
+import RedLine from '../displayobjects/RedLine/RedLine';
+
+const isNear = (p1, p2) => {
+  const a = p1.x - p2.x;
+  const b = p1.y - p2.y;
+  const c = Math.sqrt(a * a + b * b);
+  return c < 100;
+};
 
 /**
  * Main App Display Object
  *
  * Adds a background and some spinning bunnies
  *
- * @exports App
+ * @exports Example
  * @extends Container
  */
 export default class App extends Container {
@@ -18,22 +27,50 @@ export default class App extends Container {
 
     super(...args);
 
+    const logo = new Logo();
     this.addChild(bg);
-    this.addBunnies();
+    this.addLines();
+    this.addThingies();
+    this.addChild(logo);
+    this.mousepos = new Point(500, 500);
   }
 
-  addBunnies() {
-    const { height, canvasCenter } = Store.getState().Renderer;
-    const { x, y } = canvasCenter;
-    const group1 = new BunnyGroup();
-    const b1 = new Bunny();
+  addThingies() {
+    this.thingies = [];
+    for (let index = 0; index < 200; index++) {
+      const t = new Thingie();
+      t.setInitialPoint(
+        canvasWidth * Math.random(),
+        (canvasHeight + 300) * Math.random() - 300
+      );
+      const near = this.thingies.some(t2 => isNear(t.position, t2.position));
+      if (!near) {
+        this.thingies.push(t);
+        this.addChild(t);
+      }
+    }
 
-    b1.position.x = x;
-    b1.position.y = y;
+    AnimationStore.subscribe(() => {
+      this.thingies.forEach(t => t.update(this.mousepos));
+    });
 
-    group1.position.x = x;
-    group1.position.y = y + height * 0.25;
+    this.interactive = true;
+  }
 
-    this.addChild(b1, group1);
+  addLines() {
+    const count = 100;
+    for (let index = 0; index < count; index++) {
+      const y = Math.sin(index * 2) * canvasHeight - 500;
+      const step = canvasWidth / count * index;
+      const l = new RedLine(step, y);
+      this.addChild(l);
+    }
+  }
+
+  mousemove(e) {
+    const { x, y } = e.data.global;
+    if (this.mousepos.x !== x && this.mousepos.y !== y) {
+      this.mousepos.set(x, y);
+    }
   }
 }

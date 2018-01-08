@@ -1,3 +1,5 @@
+![PixiSeed](https://github.com/edwinwebb/pixi-seed/tree/master/app/displayobjects/Logo/logo@2x.png "Pixi Seed")
+
 # Pixi Seed
 
 This project is designed to bootstrap your [Pixi.js](https://github.com/pixijs/pixi.js) development with modern tooling, technology and project organisation. Use as boilerplate for your next project.
@@ -12,9 +14,11 @@ A basic loading screen has recently been added.
 * Change stores to REDUX /w ducks
 * Update to Webpack V2
 * Update to Pixi V4.6
-* Update to es6-tween
 * Added a loader screen
-* Added a custom filter example
+* Added a custom [glsl filter example](https://github.com/edwinwebb/pixi-seed/tree/master/app/filters/color)
+* ES6-Tween and [examples](https://github.com/edwinwebb/pixi-seed/tree/master/app/displayobjects/RedLine/RedLine.js)
+* Animation loop [examples](https://github.com/edwinwebb/pixi-seed/tree/master/app/displayobjects/THingie/Thingie.js)
+* HTML forms to Redux/Pixi.js examples
 
 ## TODO
 * Script to redo package.json on new project
@@ -22,7 +26,7 @@ A basic loading screen has recently been added.
 
 ## Getting started
 
-Clone the project, remove the git repository and get going:
+Clone the project, remove the git repository and install to get going:
 
 ```bash
 git clone --depth=1 https://github.com/edwinwebb/pixi-seed.git my-project
@@ -34,6 +38,7 @@ npm start
 
 Then visit http://localhost:8080
 
+## Strapped Files
 You can configure your canvas size in the AppConstants.js file.
 
 ```js
@@ -41,14 +46,19 @@ export const canvasWidth = 1920;
 export const canvasHeight = 1080;
 ```
 
-The ScaledObjectContainer used in entry.js will try a best fit approach. You can turn this off by using a standard Container instead. 
+The ScaledObjectContainer will try a best fit approach. Used in Logo and Background to auto scale.
+
+RedLine.js gives a Tween.js example
+
+Thingie.js gives an animation loop update example.
+
 
 ## npm scripts
 
 * `npm start` - Build and start the app in development mode at http://localhost:8080
 * `npm run build` - Run a production build, outputs to ./build/
 * `npm run lint` - Lint your code
-* `npm run reactman` - Generate code for a DisplayObject or Store
+* `npm run reactman` - Generate code for a DisplayObject or Store from command prompt. See [here](http://edwinwebb.github.io/reactman/).
 
 ## Static assets
 
