@@ -24,7 +24,7 @@ export default class RedLine extends Sprite {
       from: this.y,
       to: y + offset,
       duration: randomRange(200000, 400000),
-      ease: easing.backOut,
+      ease: easing.easeInOut,
       flip: Infinity
     }).start(v => (this.position.y = v));
   }
