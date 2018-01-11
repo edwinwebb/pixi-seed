@@ -16,7 +16,7 @@ The project comes with Render and Animation stores and a ScaledContainer to help
 * Update to Pixi V4.6
 * Added a loader screen
 * Added a custom [glsl filter example](https://github.com/edwinwebb/pixi-seed/tree/master/app/filters/color)
-* ES6-Tween and [examples](https://github.com/edwinwebb/pixi-seed/tree/master/app/displayobjects/RedLine/RedLine.js)
+* PopMotion with minor [examples](https://github.com/edwinwebb/pixi-seed/tree/master/app/displayobjects/RedLine/RedLine.js)
 * Animation loop [examples](https://github.com/edwinwebb/pixi-seed/tree/master/app/displayobjects/THingie/Thingie.js)
 * HTML forms to Redux/Pixi.js examples
 
@@ -48,7 +48,7 @@ export const canvasHeight = 1080;
 
 The ScaledObjectContainer will try a best fit approach. Used in Logo and Background to auto scale.
 
-RedLine.js gives a Tween.js example
+RedLine.js gives a Popmotion example
 
 Thingie.js gives an animation loop update example.
 
