@@ -3,12 +3,11 @@
  *
  * The main entry point from WebPack
  * - Appends render canvas to DOM
- * - Updates es6-tween and calls renderer.render
+ * - Calls renderer.render
  * - Add Loading Screen and loads assets
  * - Adds Example Screen once loading is complete
  * - Subscribes and Dispatches to AppStore & DOM
  */
-import * as TWEEN from 'es6-tween';
 import { utils, Container } from 'pixi.js';
 import './index.html';
 import Renderer from './Renderer/Renderer';
@@ -33,9 +32,8 @@ const colorFilter = new ColorFilter();
 // append renderer to DOM
 document.body.appendChild(renderer.view);
 
-// animate loop for tween and render
+// animate loop for render
 AnimationStore.subscribe(() => {
-  TWEEN.update();
   renderer.render(app);
 });
 

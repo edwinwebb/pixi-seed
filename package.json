@@ -1,6 +1,6 @@
 {
   "name": "pixi-seed",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "repository": "https://github.com/edwinwebb/pixi-seed",
   "description":
     "Pixi.js project seed / boiler-plate with ES6, Webpack and Redux",
@@ -28,8 +28,8 @@
     "reactman": "reactman --config ./templates/reactman.config.js"
   },
   "dependencies": {
-    "es6-tween": "^3.8.24",
     "pixi.js": "^4.6.0",
+    "popmotion": "^8.1.7",
     "redux": "^3.7.2"
   },
   "devDependencies": {
