@@ -21,6 +21,7 @@ The project comes with Render and Animation stores and a ScaledContainer to help
 * HTML forms to Redux/Pixi.js examples
 
 ## TODO
+* Move loader to REDUX
 * Script to redo package.json on new project
 * Add a screen manager
 
