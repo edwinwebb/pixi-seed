@@ -16,9 +16,9 @@
   ],
   "contributors": ["Edwin Webb <edwin.webb@gmail.com>"],
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server",
-    "webpack": "webpack -p --config ./webpack.config.js",
-    "build": "NODE_ENV=production npm run webpack",
+    "start": "webpack-dev-server --mode development",
+    "webpack": "webpack --mode development",
+    "build": "webpack --mode production",
     "format":
       "find app -name '*.js' | xargs -I{} ./node_modules/.bin/prettier --write --single-quote {}",
     "prewebpack": "npm run clean",
@@ -48,8 +48,9 @@
     "raw-loader": "^0.5.1",
     "reactman": "^3.2.0",
     "rimraf": "^2.6.2",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3"
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.1"
   },
   "engines": {
     "node": ">=8.0.0"
