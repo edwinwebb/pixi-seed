@@ -1,6 +1,6 @@
 {
   "name": "pixi-seed",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "repository": "https://github.com/edwinwebb/pixi-seed",
   "description":
     "Pixi.js project seed / boiler-plate with ES6, Webpack and Redux",
