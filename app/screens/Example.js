@@ -14,14 +14,12 @@ const isNear = (p1, p2) => {
 };
 
 /**
- * Main App Display Object
- *
- * Adds a background and some spinning bunnies
+ * Main Display Object
  *
  * @exports Example
  * @extends Container
  */
-export default class App extends Container {
+export default class Example extends Container {
   constructor(...args) {
     var bg = new Background();
 
