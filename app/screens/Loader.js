@@ -1,4 +1,4 @@
-import { loader, Graphics } from 'pixi.js';
+import { Graphics, Loader } from 'pixi.js';
 import { AnimationStore } from '../stores/Store';
 import Store from '../stores/Store';
 import ScaledContainer from '../displayobjects/ScaledContainer/ScaledContainer';
@@ -16,7 +16,7 @@ export default class LoaderScreen extends ScaledContainer {
 
     super();
 
-    this.loader = loader;
+    this.loader = new Loader();
     this.done = () => {};
 
     // set up a bar
@@ -37,10 +37,10 @@ export default class LoaderScreen extends ScaledContainer {
   }
 
   start(assets = []) {
-    loader.add(assets);
-    loader.load();
-    loader.onProgress.add(this.onUpdate.bind(this));
-    loader.onComplete.add(this.onComplete.bind(this));
+    this.loader.add(assets);
+    this.loader.load();
+    this.loader.onProgress.add(this.onUpdate.bind(this));
+    this.loader.onComplete.add(this.onComplete.bind(this));
   }
 
   onUpdate(ldr) {

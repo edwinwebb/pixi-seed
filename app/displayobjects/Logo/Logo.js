@@ -11,7 +11,7 @@ import ScaledContainer from '../ScaledContainer/ScaledContainer';
 
 export default class Logo extends ScaledContainer {
   constructor() {
-    const texture = Texture.fromImage(LOGO);
+    const texture = Texture.from(LOGO);
     const sprite = new Sprite(texture);
     super();
     this.addChild(sprite);

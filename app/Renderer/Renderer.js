@@ -1,4 +1,4 @@
-import { WebGLRenderer } from 'pixi.js';
+import { Renderer } from 'pixi.js';
 import Store, { AnimationStore } from '../stores/Store';
 import { tick } from '../stores/AnimationStore';
 import { resize } from '../stores/RendererStore';
@@ -8,10 +8,10 @@ import { resize } from '../stores/RendererStore';
  *
  * Manages main animation loop
  *
- * @exports Renderer
- * @extends WebGLRenderer
+ * @exports AnimatedRenderer
+ * @extends Renderer
  */
-export default class Renderer extends WebGLRenderer {
+export default class AnimatedRenderer extends Renderer {
   constructor(options) {
     super(options);
 

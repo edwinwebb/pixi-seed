@@ -16,7 +16,7 @@ const assets = [ONE, TWO, FOUR, FIVE];
 export default class Thingie extends Sprite {
   constructor() {
     const asset = assets[Math.floor(Math.random() * assets.length)];
-    const texture = Texture.fromImage(asset);
+    const texture = Texture.from(asset);
     super(texture);
     this.speed = Math.random() / 2 + 0.25;
     this.offset = new Point(0, 0);
