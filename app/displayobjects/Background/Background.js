@@ -12,7 +12,7 @@ export default class Background extends ScaledContainer {
   constructor() {
     super();
 
-    const bg = Sprite.fromImage(SOFT);
+    const bg = Sprite.from(SOFT);
 
     this.addChild(bg);
   }

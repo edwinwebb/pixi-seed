@@ -14,7 +14,7 @@ import { easing, tween } from 'popmotion';
 
 export default class RedLine extends Sprite {
   constructor(x, y) {
-    const texture = Texture.fromImage(LINE);
+    const texture = Texture.from(LINE);
     super(texture);
     const offset = randomRange(-500, 500);
     this.alpha = randomRange(0.2, 0.4);
