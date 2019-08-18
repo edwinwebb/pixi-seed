@@ -1,7 +1,6 @@
-import { Graphics, Loader } from 'pixi.js';
+import { Graphics, Loader, Container } from 'pixi.js';
 import { AnimationStore } from '../stores/Store';
 import Store from '../stores/Store';
-import ScaledContainer from '../displayobjects/ScaledContainer/ScaledContainer';
 
 /**
  * Loading Screen
@@ -10,7 +9,7 @@ import ScaledContainer from '../displayobjects/ScaledContainer/ScaledContainer';
  * @extends ScaledContainer
  */
 
-export default class LoaderScreen extends ScaledContainer {
+export default class LoaderScreen extends Container {
   constructor() {
     const { canvasWidth, canvasHeight } = Store.getState().Renderer;
 

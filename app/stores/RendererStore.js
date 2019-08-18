@@ -1,7 +1,5 @@
 // template : https://github.com/erikras/ducks-modular-redux
 
-import { canvasWidth, canvasHeight } from '../constants/AppConstants';
-
 const windowSize = () => ({
   width: window.innerWidth,
   height: window.innerHeight,
@@ -10,12 +8,8 @@ const windowSize = () => ({
 });
 
 const defaultState = {
-  canvasHeight,
-  canvasWidth,
-  canvasCenter: {
-    x: canvasWidth / 2,
-    y: canvasHeight / 2
-  },
+  canvasHeight: window.innerHeight,
+  canvasWidth: window.innerWidth,
   ...windowSize()
 };
 
