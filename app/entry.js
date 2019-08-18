@@ -20,6 +20,7 @@ import assignKeyPresses from './bootstrap/assignKeyPresses';
 
 import BG from './displayobjects/Background/soft.jpg';
 import DIAGNOSTIC from './displayobjects/Background/diagnostic.png';
+import COURT from './displayobjects/Court/court.png';
 
 const renderer = new Renderer({ resolution: window.devicePixelRatio }); // an extension of WebGLRenderer which dispatches to RendererStore
 const app = new Container(); // Auto scale to screen size, subscribed to RendererStore
@@ -35,7 +36,7 @@ AnimationStore.subscribe(() => {
 
 // Add loader to App Display Object and start loading assets
 app.addChild(loader);
-loader.start([BG, DIAGNOSTIC]);
+loader.start([BG, DIAGNOSTIC, COURT]);
 
 // remove loader then show example once asset loading is complete
 loader.onLoaded(() => {
