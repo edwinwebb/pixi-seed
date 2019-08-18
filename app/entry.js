@@ -16,7 +16,7 @@ import Store from './stores/Store';
 
 import Example from './screens/Example';
 import Loader from './screens/Loader';
-import { toggleDiagnostic } from './stores/AppStore';
+import assignKeyPresses from './bootstrap/assignKeyPresses';
 
 import BG from './displayobjects/Background/soft.jpg';
 import DIAGNOSTIC from './displayobjects/Background/diagnostic.png';
@@ -44,7 +44,7 @@ loader.onLoaded(() => {
   app.addChild(example);
 });
 
-window.onkeypress = () => Store.dispatch(toggleDiagnostic());
+assignKeyPresses();
 
 // start the render loop
 renderer.start();

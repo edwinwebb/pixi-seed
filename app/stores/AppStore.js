@@ -2,7 +2,7 @@ const TOGGLE_DIAGNOSTIC = 'seed/TOGGLE_DIAGNOSTIC';
 
 export default (
   state = {
-    diagnostic: true
+    diagnostic: false
   },
   action = {}
 ) => {
