@@ -25,6 +25,9 @@ export default class Court extends Container {
   }
   refresh() {
     const { gameState } = AnimationStore.getState();
+    if (!gameState) {
+      return;
+    }
     this.ball.x = gameState.ballX;
     this.ball.y = gameState.ballY;
     this.paddle.x = gameState.paddleX;

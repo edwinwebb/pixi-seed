@@ -16,6 +16,8 @@ import { AnimationStore } from './stores/Store';
 import assignKeyPresses from './bootstrap/assignKeyPresses';
 import loadAssets from './bootstrap/loadAssets';
 
+import connect from './service/connect';
+
 const renderer = new Renderer({ resolution: window.devicePixelRatio }); // an extension of WebGLRenderer which dispatches to RendererStore
 const app = new Container(); // Auto scale to screen size, subscribed to RendererStore
 
@@ -32,3 +34,6 @@ loadAssets(app);
 
 // start the render loop
 renderer.start();
+
+// connect to the remote server
+connect.init();

@@ -30,7 +30,8 @@
   "dependencies": {
     "pixi.js": "^5.0.2",
     "popmotion": "^8.6.10",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "socket.io": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
