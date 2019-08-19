@@ -19,6 +19,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "webpack": "webpack --mode development",
+    "deploy": "npm install && npm run build",
     "build": "webpack --mode production",
     "format": "find app -name '*.js' | xargs -I{} ./node_modules/.bin/prettier --write --single-quote {}",
     "prewebpack": "npm run clean",
