@@ -22,9 +22,6 @@ export default (state = defaultState, action = {}) => {
     case UPDATE_GAME:
       return {
         ...state,
-        tick: state.tick + 1,
-        previousTick: state.tick,
-        currentTime: window.performance.now(),
         gameState: action.gameState
       };
     default:
