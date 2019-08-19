@@ -14,11 +14,12 @@ export default class Background extends Container {
     this.refresh();
   }
   refresh() {
+    console.log('background refresh');
     if (this.bg) {
       this.removeChild(this.bg);
     }
     const bgAsset = Store.getState().App.diagnostic ? DIAGNOSTIC : SOFT;
-    this.bg = Sprite.from(bgAsset);
+    this.bg = Sprite.from(bgAsset, true);
     this.addChild(this.bg);
     this.scaleToWindow();
   }
