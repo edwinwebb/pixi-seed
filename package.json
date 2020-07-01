@@ -24,8 +24,7 @@
     "prewebpack": "npm run clean",
     "precommit": "lint-staged",
     "clean": "rm -rf ./build && mkdir ./build",
-    "lint": "eslint ./app/**/*.js",
-    "reactman": "reactman --config ./templates/reactman.config.js"
+    "lint": "eslint ./app/**/*.js"
   },
   "dependencies": {
     "pixi.js": "^5.3.0",
