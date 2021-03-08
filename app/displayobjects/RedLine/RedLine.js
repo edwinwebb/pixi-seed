@@ -25,7 +25,7 @@ export default class RedLine extends Sprite {
       to: y + offset,
       duration: randomRange(200000, 400000),
       ease: easeInOut,
-      flip: Infinity
-    })
+      flip: Infinity,
+    });
   }
 }

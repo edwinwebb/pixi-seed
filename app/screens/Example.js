@@ -41,7 +41,7 @@ export default class Example extends Container {
         canvasWidth * Math.random(),
         (canvasHeight + 300) * Math.random() - 300
       );
-      const near = this.thingies.some(t2 => isNear(t.position, t2.position));
+      const near = this.thingies.some((t2) => isNear(t.position, t2.position));
       if (!near) {
         this.thingies.push(t);
         this.addChild(t);
@@ -49,7 +49,7 @@ export default class Example extends Container {
     }
 
     AnimationStore.subscribe(() => {
-      this.thingies.forEach(t => t.update(this.mousepos));
+      this.thingies.forEach((t) => t.update(this.mousepos));
     });
 
     this.interactive = true;
@@ -59,7 +59,7 @@ export default class Example extends Container {
     const count = 100;
     for (let index = 0; index < count; index++) {
       const y = Math.sin(index * 2) * canvasHeight - 500;
-      const step = canvasWidth / count * index;
+      const step = (canvasWidth / count) * index;
       const l = new RedLine(step, y);
       this.addChild(l);
     }

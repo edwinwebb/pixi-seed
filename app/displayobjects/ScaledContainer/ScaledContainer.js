@@ -24,7 +24,7 @@ export default class ScaledContainer extends Container {
 
     this.currentSize = {
       w: 0,
-      h: 0
+      h: 0,
     };
 
     // TODO : init resize should come from renderer
@@ -40,7 +40,7 @@ export default class ScaledContainer extends Container {
         width,
         height,
         canvasWidth,
-        canvasHeight
+        canvasHeight,
       } = Store.getState().Renderer;
       const { w, h } = this.currentSize;
       const needsResize = checkScreen(width, height, w, h);
@@ -51,7 +51,7 @@ export default class ScaledContainer extends Container {
 
       this.currentSize = {
         w: width,
-        h: height
+        h: height,
       };
     });
   }
@@ -65,14 +65,14 @@ export default class ScaledContainer extends Container {
     const Yratio = rh / th;
     let scaleRatio = rw > rh ? Xratio : Yratio;
     let scale = new Point(scaleRatio, scaleRatio);
-    let offsetX = rw / 2 - tw * scaleRatio / 2;
-    let offsetY = rh / 2 - th * scaleRatio / 2;
+    let offsetX = rw / 2 - (tw * scaleRatio) / 2;
+    let offsetY = rh / 2 - (th * scaleRatio) / 2;
 
     if (th * scaleRatio < rh) {
       scaleRatio = Yratio;
       scale = new Point(scaleRatio, scaleRatio);
-      offsetX = rw / 2 - tw * scaleRatio / 2;
-      offsetY = rh / 2 - th * scaleRatio / 2;
+      offsetX = rw / 2 - (tw * scaleRatio) / 2;
+      offsetY = rh / 2 - (th * scaleRatio) / 2;
     }
 
     this.position.x = offsetX;

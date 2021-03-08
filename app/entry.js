@@ -47,10 +47,10 @@ Store.subscribe(() => {
 });
 
 // Dispatch from DOM to AppStore
-colorValueInput.addEventListener('change', v =>
+colorValueInput.addEventListener('change', (v) =>
   Store.dispatch(updateFilterColor(v.currentTarget.value))
 );
-colorOnInput.addEventListener('change', v =>
+colorOnInput.addEventListener('change', (v) =>
   Store.dispatch(updateFilterIsOn(v.currentTarget.checked))
 );
 
