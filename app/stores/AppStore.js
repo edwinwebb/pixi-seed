@@ -24,5 +24,5 @@ export default (
   }
 };
 
-export const updateFilterColor = value => ({ type: FILTER_COLOR, value });
-export const updateFilterIsOn = value => ({ type: FILTER_ON, value });
+export const updateFilterColor = (value) => ({ type: FILTER_COLOR, value });
+export const updateFilterIsOn = (value) => ({ type: FILTER_ON, value });

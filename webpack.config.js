@@ -44,5 +44,6 @@ module.exports = {
     compress: true,
     port: 8080
   },
-  devtool: DEBUG ? 'cheap-module-source-map' : false
+  mode: DEBUG ? 'development' : 'production',
+  devtool: DEBUG ? 'source-map' : false
 };
