@@ -6,7 +6,7 @@ const windowSize = () => ({
   width: window.innerWidth,
   height: window.innerHeight,
   resolution: window.devicePixelRatio,
-  stageCenter: { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+  stageCenter: { x: window.innerWidth / 2, y: window.innerHeight / 2 },
 });
 
 const defaultState = {
@@ -14,9 +14,9 @@ const defaultState = {
   canvasWidth,
   canvasCenter: {
     x: canvasWidth / 2,
-    y: canvasHeight / 2
+    y: canvasHeight / 2,
   },
-  ...windowSize()
+  ...windowSize(),
 };
 
 const RESIZE = 'seed/animation/TICK';
@@ -26,7 +26,7 @@ export default (state = defaultState, action = {}) => {
     case RESIZE:
       return {
         ...state,
-        ...windowSize()
+        ...windowSize(),
       };
     default:
       return state;

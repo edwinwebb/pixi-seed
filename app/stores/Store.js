@@ -5,7 +5,7 @@ import App from './AppStore';
 
 const Combi = combineReducers({
   Renderer,
-  App
+  App,
 });
 
 export const AnimationStore = createStore(Animation);

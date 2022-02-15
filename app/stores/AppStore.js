@@ -4,7 +4,7 @@ const FILTER_ON = 'seed/animation/FILTER_ON';
 export default (
   state = {
     color: 0x9c0a3c,
-    coloron: false
+    coloron: false,
   },
   action = {}
 ) => {
@@ -12,12 +12,12 @@ export default (
     case FILTER_COLOR:
       return {
         ...state,
-        color: parseInt(action.value.replace('#', '0x'))
+        color: parseInt(action.value.replace('#', '0x')),
       };
     case FILTER_ON:
       return {
         ...state,
-        coloron: action.value
+        coloron: action.value,
       };
     default:
       return state;

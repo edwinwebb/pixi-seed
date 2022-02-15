@@ -6,7 +6,7 @@ const defaultState = {
   tick: 1,
   previousTick: 0,
   startTime: window.performance.now(),
-  currentTime: window.performance.now()
+  currentTime: window.performance.now(),
 };
 
 export default (state = defaultState, action = {}) => {
@@ -16,7 +16,7 @@ export default (state = defaultState, action = {}) => {
         ...state,
         tick: state.tick + 1,
         previousTick: state.tick,
-        currentTime: window.performance.now()
+        currentTime: window.performance.now(),
       };
     default:
       return state;
